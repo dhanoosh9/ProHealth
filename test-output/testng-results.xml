@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="99606" started-at="2022-06-05T00:35:01 IST" finished-at="2022-06-05T00:36:40 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="99606" started-at="2022-06-05T00:35:01 IST" finished-at="2022-06-05T00:36:40 IST">
+      <class name="com.Tests.AddressTypeFunctionality_TC_01">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_01@1e4a7dd4]" name="setup" is-config="true" duration-ms="14141" started-at="2022-06-05T00:35:01 IST" finished-at="2022-06-05T00:35:15 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_01@1e4a7dd4]" name="loginTest" duration-ms="84613" started-at="2022-06-05T00:35:15 IST" finished-at="2022-06-05T00:36:40 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_01@1e4a7dd4]" name="teardown" is-config="true" duration-ms="805" started-at="2022-06-05T00:36:40 IST" finished-at="2022-06-05T00:36:40 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.Tests.AddressTypeFunctionality_TC_01 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
