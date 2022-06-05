@@ -34,7 +34,6 @@ public class AddressTypeFunctionality_TC_02 extends BaseClass {
 		if (driver.findElement(AddressTypeElements.name).isDisplayed()
 				&& driver.findElement(AddressTypeElements.status).isDisplayed()
 				&& driver.findElement(AddressTypeElements.action).isDisplayed()) {
-			Assert.assertTrue(true);
 			List<WebElement> rowcount = driver
 					.findElements(By.xpath("//*[@id='main']/div[2]/div[3]/div[2]/table/tbody/tr"));
 
@@ -42,12 +41,11 @@ public class AddressTypeFunctionality_TC_02 extends BaseClass {
 				List<WebElement> colcount = driver
 						.findElements(By.xpath("//*[@id='main']/div[2]/div[3]/div[2]/table/tbody/tr[" + i + "]/td"));
 				for (int j = 1; j <= colcount.size(); j++) {
-					if (driver
+					boolean value = driver
 							.findElement(By.xpath(
 									"//*[@id='main']/div[2]/div[3]/div[2]/table/tbody/tr[" + i + "]/td[" + j + "]"))
-							.isDisplayed()) {
-						Assert.assertTrue(true);
-					}
+							.isDisplayed();
+					Assert.assertTrue(value);
 				}
 			}
 		}
