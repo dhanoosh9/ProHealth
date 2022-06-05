@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="99606" started-at="2022-06-05T00:35:01 IST" finished-at="2022-06-05T00:36:40 IST">
+  <suite name="Suite" duration-ms="101796" started-at="2022-06-05T14:20:58 IST" finished-at="2022-06-05T14:22:40 IST">
     <groups>
+      <group name="AddressType">
+        <method signature="AddressTypeFunctionality_TC_01.dashboardTest()[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_01@4f51b3e0]" name="dashboardTest" class="com.Tests.AddressTypeFunctionality_TC_01"/>
+      </group> <!-- AddressType -->
     </groups>
-    <test name="Test" duration-ms="99606" started-at="2022-06-05T00:35:01 IST" finished-at="2022-06-05T00:36:40 IST">
-      <class name="com.Tests.AddressTypeFunctionality_TC_01">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_01@1e4a7dd4]" name="setup" is-config="true" duration-ms="14141" started-at="2022-06-05T00:35:01 IST" finished-at="2022-06-05T00:35:15 IST">
+    <test name="Test" duration-ms="101796" started-at="2022-06-05T14:20:58 IST" finished-at="2022-06-05T14:22:40 IST">
+      <class name="com.Tests.AddressTypeFunctionality_TC_02">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_02@5e955596]" name="setup" is-config="true" duration-ms="4532" started-at="2022-06-05T14:22:30 IST" finished-at="2022-06-05T14:22:34 IST">
           <params>
             <param index="0">
               <value>
@@ -18,11 +21,32 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_01@1e4a7dd4]" name="loginTest" duration-ms="84613" started-at="2022-06-05T00:35:15 IST" finished-at="2022-06-05T00:36:40 IST">
+        <test-method status="PASS" signature="addressTypeTest()[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_02@5e955596]" name="addressTypeTest" duration-ms="4817" depends-on-groups="AddressType" started-at="2022-06-05T14:22:34 IST" finished-at="2022-06-05T14:22:39 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_01@1e4a7dd4]" name="teardown" is-config="true" duration-ms="805" started-at="2022-06-05T00:36:40 IST" finished-at="2022-06-05T00:36:40 IST">
+        </test-method> <!-- addressTypeTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_02@5e955596]" name="teardown" is-config="true" duration-ms="740" started-at="2022-06-05T14:22:39 IST" finished-at="2022-06-05T14:22:40 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.Tests.AddressTypeFunctionality_TC_02 -->
+      <class name="com.Tests.AddressTypeFunctionality_TC_01">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_01@4f51b3e0]" name="setup" is-config="true" duration-ms="6800" started-at="2022-06-05T14:20:58 IST" finished-at="2022-06-05T14:21:05 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="dashboardTest()[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_01@4f51b3e0]" name="dashboardTest" duration-ms="84052" started-at="2022-06-05T14:21:05 IST" finished-at="2022-06-05T14:22:29 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dashboardTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_01@4f51b3e0]" name="teardown" is-config="true" duration-ms="793" started-at="2022-06-05T14:22:29 IST" finished-at="2022-06-05T14:22:30 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

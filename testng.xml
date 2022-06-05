@@ -7,7 +7,8 @@
 	<parameter name="browser" value="chrome"></parameter>
 	<test name="Test">
 		<classes>
-			<class name="com.Tests.AddressTypeFunctionality_TC_01" />
+		 	<class name="com.Tests.AddressTypeFunctionality_TC_01" /> 
+			<class name="com.Tests.AddressTypeFunctionality_TC_02"></class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -73,15 +73,8 @@ public class BaseClass {
 		String generatedstring2 = RandomStringUtils.randomNumeric(10);
 		return generatedstring2;
 	}
-
+	
 	// Click method with by element
-
-	public static WebElement Wait(WebElement element) {
-		waitE = new WebDriverWait(driver, Duration.ofSeconds(30));
-		waitE.until(ExpectedConditions.elementToBeClickable(element));
-		return element;
-	}
-
 	public static void click(By element) {
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(30));
 		waitE.until(ExpectedConditions.elementToBeClickable(element)).click();
@@ -105,7 +98,7 @@ public class BaseClass {
 		waitE.until(ExpectedConditions.elementToBeClickable(element)).sendKeys(text);
 	}
 
-	// select by index
+	// select by index with iteration
 	public static void selectIndex(WebElement element, int index, String[] expected) {
 		Select select = new Select(element);
 		List<WebElement> options = select.getOptions();
@@ -121,6 +114,12 @@ public class BaseClass {
 		}
 		select.selectByIndex(index);
 
+	}
+	
+	//select by index
+	public static void selectIndex(WebElement element, int index) {
+		Select select = new Select(element);
+		select.selectByIndex(index);
 	}
 
 	// select by value

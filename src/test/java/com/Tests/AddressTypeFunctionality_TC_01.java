@@ -20,8 +20,8 @@ public class AddressTypeFunctionality_TC_01 extends BaseClass {
 	String[] expected = null;
 	JavascriptExecutor js;
 
-	@Test
-	public void loginTest() throws InterruptedException {
+	@Test(groups = { "AddressType" })
+	public void dashboardTest() throws InterruptedException {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
 		login();
@@ -34,11 +34,13 @@ public class AddressTypeFunctionality_TC_01 extends BaseClass {
 		}
 
 		if (driver.findElement(LoginElements.facility_dropdown).isDisplayed()) {
+			Assert.assertTrue(true);
 			String expected[] = { "---select---", "Apollo", "cipla", "Dental", "Pharma" };
 			selectIndex(driver.findElement(LoginElements.facility_dropdown), 1, expected);
 		}
 
 		if (driver.findElement(LoginElements.roles_dropdown).isDisplayed()) {
+			Assert.assertTrue(true);
 			String expected[] = { "---select---", "ADMIN" };
 			selectIndex(driver.findElement(LoginElements.roles_dropdown), 1, expected);
 		}
@@ -46,6 +48,7 @@ public class AddressTypeFunctionality_TC_01 extends BaseClass {
 		click(login_button);
 
 		if (driver.findElement(By.xpath("//div[contains(@class,'breadCrumb')]")).isDisplayed()) {
+			Assert.assertTrue(true);
 			Actions action = new Actions(driver);
 			action.moveToElement(driver.findElement(FrontOfficeDashBoardElements.settings)).perform();
 		}
