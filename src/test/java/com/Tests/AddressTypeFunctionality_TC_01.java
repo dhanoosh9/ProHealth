@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -22,13 +23,11 @@ public class AddressTypeFunctionality_TC_01 extends BaseClass {
 
 	@Test(groups = { "AddressType" })
 	public void dashboardTest() throws InterruptedException {
-//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-
 		login();
 
 		boolean login_validation = waitE
 				.until(ExpectedConditions
-						.presenceOfElementLocated(By.xpath("//h3[contains(.,'Log in to your Account')]")))
+						.visibilityOfElementLocated(By.xpath("//h3[contains(.,'Log in to your Account')]")))
 				.isDisplayed();
 		Assert.assertTrue(login_validation);
 
@@ -51,9 +50,9 @@ public class AddressTypeFunctionality_TC_01 extends BaseClass {
 
 		click(FrontOfficeDashBoardElements.domain_values);
 
-		if (waitE.until(ExpectedConditions.presenceOfElementLocated((FrontOfficeDashBoardElements.address_type)))
+		if (waitE.until(ExpectedConditions.visibilityOfElementLocated((FrontOfficeDashBoardElements.address_type)))
 				.isDisplayed()
-				&& waitE.until(ExpectedConditions.presenceOfElementLocated((FrontOfficeDashBoardElements.add_button)))
+				&& waitE.until(ExpectedConditions.visibilityOfElementLocated((FrontOfficeDashBoardElements.add_button)))
 						.isDisplayed()) {
 			Assert.assertTrue(true);
 		}
@@ -63,39 +62,49 @@ public class AddressTypeFunctionality_TC_01 extends BaseClass {
 
 		Assert.assertEquals(domain_values, values);
 
-		List<WebElement> options = driver.findElements(FrontOfficeDashBoardElements.allvalues);
-
-		for (int j = 1; j <= options.size(); j++) {
+		for (int j = 0; j < FrontDashBoardData.domain_values_xpath.length; j++) {
 			if (waitE
 					.until(ExpectedConditions
-							.presenceOfElementLocated(By.xpath(FrontDashBoardData.domain_values_xpath[j])))
+							.visibilityOfElementLocated(By.xpath(FrontDashBoardData.domain_values_xpath[j])))
 					.isDisplayed()) {
 				String text = waitE
 						.until(ExpectedConditions
-								.presenceOfElementLocated(By.xpath(FrontDashBoardData.domain_values_xpath[j])))
+								.visibilityOfElementLocated(By.xpath(FrontDashBoardData.domain_values_xpath[j])))
 						.getText();
 				if (text.equals(FrontDashBoardData.expected[j])) {
-//					waitE.until(ExpectedConditions
-//							.elementToBeClickable(By.xpath(FrontDashBoardData.domain_values_xpath[j]))).click();
+//					js = (JavascriptExecutor) driver;
+//					js.executeScript("arguments[0].click();",
+//							driver.findElement(By.xpath(FrontDashBoardData.domain_values_xpath[j])));
 					click(By.xpath(FrontDashBoardData.domain_values_xpath[j]));
+					js = (JavascriptExecutor) driver;
+					js.executeScript("window.scrollBy(0,50)", "");
 					boolean value = waitE
-							.until(ExpectedConditions.presenceOfElementLocated(By.xpath(FrontDashBoardData.name[j])))
+							.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(FrontDashBoardData.name[j])))
 							.isDisplayed();
 					Assert.assertTrue(value);
-					try {
+					if (driver.findElement(FrontOfficeDashBoardElements.alert_button).isDisplayed()) {
 						driver.findElement(FrontOfficeDashBoardElements.alert_button).click();
-					} catch (Exception e) {
-
+					} else {
+						continue;
 					}
+//					try {
+//						driver.findElement(FrontOfficeDashBoardElements.alert_button).click();
+//					} catch (Exception e) {
+//
+//					}
 
 				}
 
 			}
 		}
 
+//		List<WebElement> options = driver.findElements(FrontOfficeDashBoardElements.allvalues);
 //		for (int i = 1; i <= options.size(); i++) {
+//
 //			click(By.xpath("//*[@id='main']/div[2]/div[2]/ul/li[" + i + "]"));
-//			boolean name = driver.findElement(AddressTypeElements.name).isDisplayed();
+//			boolean name = waitE
+//					.until(ExpectedConditions.presenceOfElementLocated(By.xpath(FrontDashBoardData.name[i])))
+//					.isDisplayed();
 //			Assert.assertTrue(name);
 //			js = (JavascriptExecutor) driver;
 //			js.executeScript("window.scrollBy(0,50)", "");
@@ -105,7 +114,7 @@ public class AddressTypeFunctionality_TC_01 extends BaseClass {
 //
 //			}
 //		}
-		js.executeScript("window.scrollBy(0,-1000)", "");
+//		js.executeScript("window.scrollBy(0,-1000)", "");
 
 	}
 

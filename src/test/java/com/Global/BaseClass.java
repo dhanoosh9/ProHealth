@@ -4,6 +4,8 @@ import java.time.Duration;
 import java.util.List;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -39,6 +41,8 @@ public class BaseClass {
 	public static By password = By.xpath("//input[@name='password']");
 	public static By login_button = By.xpath("//button[contains(.,'LOGIN')]");
 
+	public static Logger log = LogManager.getLogger(BaseClass.class);
+
 	@Parameters({ "browser" })
 	@BeforeClass
 	public void setup(String browserName) throws InterruptedException {
@@ -52,24 +56,33 @@ public class BaseClass {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}
-//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		log.info("Selected browser is: " + browserName);
+		log.info("Navigating to the URL");
 		driver.navigate().to(baseURL);
 		driver.manage().deleteAllCookies();
+		log.info("Maximizing the window");
 		driver.manage().window().maximize();
 	}
 
+	// Method for login
 	public void login() {
+		log.info("Entering the practice");
 		sendKeys(practice, Practice);
+		log.info("Entering the username");
 		sendKeys(username, Username);
+		log.info("Entering the password");
 		sendKeys(password, Password);
+		log.info("Clicking on login button");
 		click(login_button);
 	}
 
+	// Creates a random string
 	public static String randomstring() {
 		String generatedstring = RandomStringUtils.randomAlphabetic(8);
 		return generatedstring;
 	}
 
+	// Creates a random number
 	public static String randomNum() {
 		String generatedstring2 = RandomStringUtils.randomNumeric(10);
 		return generatedstring2;
@@ -78,7 +91,7 @@ public class BaseClass {
 	// Click method with by element
 	public static void click(By element) {
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
-		if (waitE.until(ExpectedConditions.elementToBeClickable((element))).isDisplayed()) {
+		if (waitE.until(ExpectedConditions.visibilityOfElementLocated((element))).isDisplayed()) {
 			waitE.until(ExpectedConditions.elementToBeClickable(element)).click();
 		} else {
 			Assert.assertTrue(false);
@@ -88,10 +101,44 @@ public class BaseClass {
 	// Send keys method with by element
 	public static void sendKeys(By element, String text) {
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
-		if (waitE.until(ExpectedConditions.presenceOfElementLocated((element))).isDisplayed()) {
+		if (waitE.until(ExpectedConditions.visibilityOfElementLocated((element))).isDisplayed()) {
 			waitE.until(ExpectedConditions.elementToBeClickable(element)).sendKeys(text);
 		} else {
 			Assert.assertTrue(false);
+		}
+	}
+
+	// select by index with iteration
+	public static void selectIndex(By element, int index, String[] expected) {
+		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
+		if (waitE.until(ExpectedConditions.visibilityOfElementLocated(element)).isDisplayed()) {
+			Select select = new Select(waitE.until(ExpectedConditions.presenceOfElementLocated(element)));
+			List<WebElement> options = select.getOptions();
+			for (WebElement ele : options) {
+				boolean value = false;
+				for (int i = 0; i < expected.length; i++) {
+					if (ele.getText().equals(expected[i])) {
+						System.out.println("Actual: " + ele.getText() + " matched " + "Expected: " + expected[i]);
+						value = true;
+					}
+				}
+				Assert.assertTrue(value);
+			}
+			select.selectByIndex(index);
+		} else {
+			Assert.assertTrue(false, "The element is not displayed");
+		}
+
+	}
+
+	// Hover
+	public static void hover(By element) {
+		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
+		if (waitE.until(ExpectedConditions.visibilityOfElementLocated(element)).isDisplayed()) {
+			Actions action = new Actions(driver);
+			action.moveToElement(waitE.until(ExpectedConditions.presenceOfElementLocated(element))).perform();
+		} else {
+			Assert.assertTrue(false, "The element was not displayed");
 		}
 	}
 
@@ -107,29 +154,6 @@ public class BaseClass {
 		waitE.until(ExpectedConditions.elementToBeClickable(element)).sendKeys(text);
 	}
 
-	// select by index with iteration
-	public static void selectIndex(By element, int index, String[] expected) {
-		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
-		if (waitE.until(ExpectedConditions.presenceOfElementLocated(element)).isDisplayed()) {
-			Select select = new Select(waitE.until(ExpectedConditions.presenceOfElementLocated(element)));
-			List<WebElement> options = select.getOptions();
-			for (WebElement ele : options) {
-				boolean value = false;
-				for (int i = 0; i < expected.length; i++) {
-					if (ele.getText().equals(expected[i])) {
-						System.out.println("Actual: " + ele.getText() + " matched " + "Expected: " + expected[i]);
-						value = true;
-					}
-				}
-				Assert.assertTrue(value);
-			}
-			select.selectByIndex(index);
-		} else {
-			Assert.assertTrue(false,"The element is not displayed");
-		}
-
-	}
-
 	// select by index
 	public static void selectIndex(WebElement element, int index) {
 		Select select = new Select(element);
@@ -140,7 +164,6 @@ public class BaseClass {
 	public static void selectValue(WebElement element, String value) {
 		Select select = new Select(element);
 		select.selectByValue(value);
-
 	}
 
 	// select by value
@@ -148,24 +171,6 @@ public class BaseClass {
 		Select select = new Select(element);
 		select.selectByValue(visibletext);
 	}
-
-	public static void hover(By element) {
-		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
-		if (waitE.until(ExpectedConditions.elementToBeClickable(element)).isDisplayed()) {
-			Actions action = new Actions(driver);
-			action.moveToElement(waitE.until(ExpectedConditions.presenceOfElementLocated(element))).perform();
-		} else {
-			Assert.assertTrue(false, "The element was not displayed");
-		}
-
-	}
-	
-//	public static void check(By element) {
-//		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
-//		if(waitE.until(ExpectedConditions.presenceOfElementLocated(element)).isDisplayed()) {
-//			waitE.until(ExpectedConditions.presenceOfElementLocated(element)).getText();
-//		}
-//	}
 
 	@AfterClass
 	public void teardown() {

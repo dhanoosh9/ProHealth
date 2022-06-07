@@ -30,6 +30,7 @@ public class AddressTypeFunctionality_TC_02 extends BaseClass {
 		action.moveToElement(driver.findElement(FrontOfficeDashBoardElements.settings)).perform();
 
 		click(FrontOfficeDashBoardElements.domain_values);
+		click(FrontOfficeDashBoardElements.addresstype_button);
 
 		if (driver.findElement(AddressTypeElements.name).isDisplayed()
 				&& driver.findElement(AddressTypeElements.status).isDisplayed()
