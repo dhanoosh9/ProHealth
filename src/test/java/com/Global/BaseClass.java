@@ -7,6 +7,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,6 +22,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
+import com.Elements.FrontOfficeDashBoardElements;
 import com.Utilities.ReadConfig;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -29,6 +31,7 @@ public class BaseClass {
 
 	public static WebDriver driver;
 	public static WebDriverWait waitE;
+	public static JavascriptExecutor js;
 
 	ReadConfig readconfig = new ReadConfig();
 	String baseURL = readconfig.getApplicationURL();
@@ -142,6 +145,28 @@ public class BaseClass {
 		}
 	}
 
+	public static void checkTable(int itr, String[] element, String[] expected, String[] element2) {
+		for (int j = 0; j < itr; j++) {
+			if (waitE.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element[j]))).isDisplayed()) {
+				String text = waitE.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element[j])))
+						.getText();
+				if (text.equals(expected[j])) {
+					click(By.xpath(element[j]));
+					js = (JavascriptExecutor) driver;
+					js.executeScript("window.scrollBy(0,50)", "");
+					boolean value = waitE.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element2[j])))
+							.isDisplayed();
+					Assert.assertTrue(value);
+					if (driver.findElement(FrontOfficeDashBoardElements.alert_button).isDisplayed()) {
+						driver.findElement(FrontOfficeDashBoardElements.alert_button).click();
+					} else {
+						continue;
+					}
+				}
+			}
+		}
+	}
+
 	// Click method with web element element
 	public static void click(WebElement element) {
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -155,9 +180,12 @@ public class BaseClass {
 	}
 
 	// select by index
-	public static void selectIndex(WebElement element, int index) {
-		Select select = new Select(element);
-		select.selectByIndex(index);
+	public static void selectIndex(By element, int index) {
+		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
+		if (waitE.until(ExpectedConditions.visibilityOfElementLocated(element)).isDisplayed()) {
+			Select select = new Select(waitE.until(ExpectedConditions.presenceOfElementLocated(element)));
+			select.selectByIndex(index);
+		}
 	}
 
 	// select by value

@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -18,16 +17,15 @@ public class AddressTypeFunctionality_TC_02 extends BaseClass {
 
 	@Test(dependsOnGroups = { "AddressType" })
 	public void addressTypeTest() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		login();
 
-		selectIndex(driver.findElement(LoginElements.facility_dropdown), 1);
-		selectIndex(driver.findElement(LoginElements.roles_dropdown), 1);
+		selectIndex(LoginElements.facility_dropdown, 1);
+		selectIndex(LoginElements.roles_dropdown, 1);
 
 		click(login_button);
-
-		Actions action = new Actions(driver);
-		action.moveToElement(driver.findElement(FrontOfficeDashBoardElements.settings)).perform();
+		
+		hover(FrontOfficeDashBoardElements.settings);
 
 		click(FrontOfficeDashBoardElements.domain_values);
 		click(FrontOfficeDashBoardElements.addresstype_button);

@@ -19,7 +19,6 @@ import com.Global.BaseClass;
 
 public class AddressTypeFunctionality_TC_01 extends BaseClass {
 	String[] expected = null;
-	JavascriptExecutor js;
 
 	@Test(groups = { "AddressType" })
 	public void dashboardTest() throws InterruptedException {
@@ -61,42 +60,43 @@ public class AddressTypeFunctionality_TC_01 extends BaseClass {
 		int values = 43;
 
 		Assert.assertEquals(domain_values, values);
-
-		for (int j = 0; j < FrontDashBoardData.domain_values_xpath.length; j++) {
-			if (waitE
-					.until(ExpectedConditions
-							.visibilityOfElementLocated(By.xpath(FrontDashBoardData.domain_values_xpath[j])))
-					.isDisplayed()) {
-				String text = waitE
-						.until(ExpectedConditions
-								.visibilityOfElementLocated(By.xpath(FrontDashBoardData.domain_values_xpath[j])))
-						.getText();
-				if (text.equals(FrontDashBoardData.expected[j])) {
+		checkTable(FrontDashBoardData.domain_values_xpath.length, FrontDashBoardData.domain_values_xpath,
+				FrontDashBoardData.expected, FrontDashBoardData.name);
+//		for (int j = 0; j < FrontDashBoardData.domain_values_xpath.length; j++) {
+//			if (waitE
+//					.until(ExpectedConditions
+//							.visibilityOfElementLocated(By.xpath(FrontDashBoardData.domain_values_xpath[j])))
+//					.isDisplayed()) {
+//				String text = waitE
+//						.until(ExpectedConditions
+//								.visibilityOfElementLocated(By.xpath(FrontDashBoardData.domain_values_xpath[j])))
+//						.getText();
+//				if (text.equals(FrontDashBoardData.expected[j])) {
+////					js = (JavascriptExecutor) driver;
+////					js.executeScript("arguments[0].click();",
+////							driver.findElement(By.xpath(FrontDashBoardData.domain_values_xpath[j])));
+//					click(By.xpath(FrontDashBoardData.domain_values_xpath[j]));
 //					js = (JavascriptExecutor) driver;
-//					js.executeScript("arguments[0].click();",
-//							driver.findElement(By.xpath(FrontDashBoardData.domain_values_xpath[j])));
-					click(By.xpath(FrontDashBoardData.domain_values_xpath[j]));
-					js = (JavascriptExecutor) driver;
-					js.executeScript("window.scrollBy(0,50)", "");
-					boolean value = waitE
-							.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(FrontDashBoardData.name[j])))
-							.isDisplayed();
-					Assert.assertTrue(value);
-					if (driver.findElement(FrontOfficeDashBoardElements.alert_button).isDisplayed()) {
-						driver.findElement(FrontOfficeDashBoardElements.alert_button).click();
-					} else {
-						continue;
-					}
-//					try {
+//					js.executeScript("window.scrollBy(0,50)", "");
+//					boolean value = waitE
+//							.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(FrontDashBoardData.name[j])))
+//							.isDisplayed();
+//					Assert.assertTrue(value);
+//					if (driver.findElement(FrontOfficeDashBoardElements.alert_button).isDisplayed()) {
 //						driver.findElement(FrontOfficeDashBoardElements.alert_button).click();
-//					} catch (Exception e) {
-//
+//					} else {
+//						continue;
 //					}
-
-				}
-
-			}
-		}
+////					try {
+////						driver.findElement(FrontOfficeDashBoardElements.alert_button).click();
+////					} catch (Exception e) {
+////
+////					}
+//
+//				}
+//
+//			}
+//		}
 
 //		List<WebElement> options = driver.findElements(FrontOfficeDashBoardElements.allvalues);
 //		for (int i = 1; i <= options.size(); i++) {
