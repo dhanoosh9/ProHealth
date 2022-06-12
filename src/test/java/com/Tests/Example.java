@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.Elements.FrontOfficeDashBoardElements;
+import com.Elements.DomainValuesElements;
 import com.Elements.LoginElements;
 import com.ExpectedData.FrontDashBoardData;
 import com.Global.BaseClass;
@@ -30,8 +30,8 @@ public class Example extends BaseClass {
 					boolean value = waitE.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element2[j])))
 							.isDisplayed();
 					Assert.assertTrue(value);
-					if (driver.findElement(FrontOfficeDashBoardElements.alert_button).isDisplayed()) {
-						driver.findElement(FrontOfficeDashBoardElements.alert_button).click();
+					if (driver.findElement(DomainValuesElements.alert_button).isDisplayed()) {
+						driver.findElement(DomainValuesElements.alert_button).click();
 					} else {
 						continue;
 					}
@@ -51,9 +51,9 @@ public class Example extends BaseClass {
 		click(login_button);
 
 		Actions action = new Actions(driver);
-		action.moveToElement(driver.findElement(FrontOfficeDashBoardElements.settings)).perform();
+		action.moveToElement(driver.findElement(DomainValuesElements.settings)).perform();
 
-		click(FrontOfficeDashBoardElements.domain_values);
+		click(DomainValuesElements.domain_values);
 
 		checkTable(FrontDashBoardData.domain_values_xpath.length, FrontDashBoardData.domain_values_xpath,
 				FrontDashBoardData.expected, FrontDashBoardData.name);

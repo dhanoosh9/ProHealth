@@ -7,9 +7,11 @@
 	<parameter name="browser" value="chrome"></parameter>
 	<test name="Test">
 		<classes>
-		 	<class name="com.Tests.AddressTypeFunctionality_TC_01"></class> 
-		 	<class name="com.Tests.AddressTypeFunctionality_TC_02"></class> 
-
+		<!--	<class name="com.Tests.AddressTypeFunctionality_TC_01"></class>
+				<class name="com.Tests.AddressTypeFunctionality_TC_02"></class> 
+				<class name="com.Tests.UsersFunctionality_TC_09"></class>
+				 -->
+			<class name="com.Tests.UsersFunctionality_TC_01"></class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

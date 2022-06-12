@@ -1,6 +1,5 @@
 package com.Tests;
 
-import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -9,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.Elements.AddressTypeElements;
-import com.Elements.FrontOfficeDashBoardElements;
+import com.Elements.DomainValuesElements;
 import com.Elements.LoginElements;
 import com.Global.BaseClass;
 
@@ -25,10 +24,10 @@ public class AddressTypeFunctionality_TC_02 extends BaseClass {
 
 		click(login_button);
 		
-		hover(FrontOfficeDashBoardElements.settings);
+		hover(DomainValuesElements.settings);
 
-		click(FrontOfficeDashBoardElements.domain_values);
-		click(FrontOfficeDashBoardElements.addresstype_button);
+		click(DomainValuesElements.domain_values);
+		click(DomainValuesElements.addresstype_button);
 
 		if (driver.findElement(AddressTypeElements.name).isDisplayed()
 				&& driver.findElement(AddressTypeElements.status).isDisplayed()

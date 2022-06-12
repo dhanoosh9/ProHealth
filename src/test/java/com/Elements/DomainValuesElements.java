@@ -2,7 +2,7 @@ package com.Elements;
 
 import org.openqa.selenium.By;
 
-public class FrontOfficeDashBoardElements {
+public class DomainValuesElements {
 
 	public static By settings = By.xpath("//img[@src='./images/settings.png']");
 	public static By domain_values = By.xpath("//a[contains(.,'Domain Values')]");

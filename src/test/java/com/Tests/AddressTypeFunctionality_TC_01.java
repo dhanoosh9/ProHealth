@@ -12,7 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.Elements.AddressTypeElements;
-import com.Elements.FrontOfficeDashBoardElements;
+import com.Elements.DomainValuesElements;
 import com.Elements.LoginElements;
 import com.ExpectedData.FrontDashBoardData;
 import com.Global.BaseClass;
@@ -43,20 +43,20 @@ public class AddressTypeFunctionality_TC_01 extends BaseClass {
 		click(login_button);
 
 		if (driver.findElement(By.xpath("//div[contains(@class,'breadCrumb')]")).isDisplayed()) {
-			hover(FrontOfficeDashBoardElements.settings);
+			hover(DomainValuesElements.settings);
 
 		}
 
-		click(FrontOfficeDashBoardElements.domain_values);
+		click(DomainValuesElements.domain_values);
 
-		if (waitE.until(ExpectedConditions.visibilityOfElementLocated((FrontOfficeDashBoardElements.address_type)))
+		if (waitE.until(ExpectedConditions.visibilityOfElementLocated((DomainValuesElements.address_type)))
 				.isDisplayed()
-				&& waitE.until(ExpectedConditions.visibilityOfElementLocated((FrontOfficeDashBoardElements.add_button)))
+				&& waitE.until(ExpectedConditions.visibilityOfElementLocated((DomainValuesElements.add_button)))
 						.isDisplayed()) {
 			Assert.assertTrue(true);
 		}
 
-		int domain_values = driver.findElements(FrontOfficeDashBoardElements.allvalues).size();
+		int domain_values = driver.findElements(DomainValuesElements.allvalues).size();
 		int values = 43;
 
 		Assert.assertEquals(domain_values, values);

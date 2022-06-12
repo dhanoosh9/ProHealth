@@ -22,7 +22,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
-import com.Elements.FrontOfficeDashBoardElements;
+import com.Elements.DomainValuesElements;
 import com.Utilities.ReadConfig;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -145,6 +145,7 @@ public class BaseClass {
 		}
 	}
 
+	// Method to check all the domain values are displayed
 	public static void checkTable(int itr, String[] element, String[] expected, String[] element2) {
 		for (int j = 0; j < itr; j++) {
 			if (waitE.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element[j]))).isDisplayed()) {
@@ -157,14 +158,31 @@ public class BaseClass {
 					boolean value = waitE.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element2[j])))
 							.isDisplayed();
 					Assert.assertTrue(value);
-					if (driver.findElement(FrontOfficeDashBoardElements.alert_button).isDisplayed()) {
-						driver.findElement(FrontOfficeDashBoardElements.alert_button).click();
+					if (driver.findElement(DomainValuesElements.alert_button).isDisplayed()) {
+						driver.findElement(DomainValuesElements.alert_button).click();
 					} else {
 						continue;
 					}
 				}
 			}
 		}
+	}
+
+	// Method to check whether the elements are displayed
+	public static void checkElements(int itr, String[] elements) {
+		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
+		for (int i = 0; i < itr; i++) {
+			boolean value = waitE.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(elements[i])))
+					.isDisplayed();
+			Assert.assertTrue(value);
+		}
+	}
+
+	// Method to check whether the element is displayed
+	public static void Displayed(By element) {
+		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
+		boolean value = waitE.until(ExpectedConditions.visibilityOfElementLocated(element)).isDisplayed();
+		Assert.assertTrue(value);
 	}
 
 	// Click method with web element element
