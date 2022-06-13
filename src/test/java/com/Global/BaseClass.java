@@ -8,6 +8,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,7 +17,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -31,6 +35,7 @@ public class BaseClass {
 
 	public static WebDriver driver;
 	public static WebDriverWait waitE;
+	public static Wait<WebDriver> wait;
 	public static JavascriptExecutor js;
 
 	ReadConfig readconfig = new ReadConfig();
@@ -65,6 +70,12 @@ public class BaseClass {
 		driver.manage().deleteAllCookies();
 		log.info("Maximizing the window");
 		driver.manage().window().maximize();
+	}
+
+	@AfterClass
+	public void teardown() {
+		driver.close();
+		driver.quit();
 	}
 
 	// Method for login
@@ -113,9 +124,12 @@ public class BaseClass {
 
 	// select by index with iteration
 	public static void selectIndex(By element, int index, String[] expected) {
-		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
-		if (waitE.until(ExpectedConditions.visibilityOfElementLocated(element)).isDisplayed()) {
-			Select select = new Select(waitE.until(ExpectedConditions.presenceOfElementLocated(element)));
+//			waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10)).pollingEvery(Duration.ofSeconds(2))
+				.ignoring(NoSuchElementException.class, StaleElementReferenceException.class);
+
+		if (wait.until(ExpectedConditions.presenceOfElementLocated(element)).isDisplayed()) {
+			Select select = new Select(wait.until(ExpectedConditions.presenceOfElementLocated(element)));
 			List<WebElement> options = select.getOptions();
 			for (WebElement ele : options) {
 				boolean value = false;
@@ -128,6 +142,8 @@ public class BaseClass {
 				Assert.assertTrue(value);
 			}
 			select.selectByIndex(index);
+			boolean value = select.getFirstSelectedOption().isDisplayed();
+			Assert.assertTrue(value);
 		} else {
 			Assert.assertTrue(false, "The element is not displayed");
 		}
@@ -148,14 +164,13 @@ public class BaseClass {
 	// Method to check all the domain values are displayed
 	public static void checkTable(int itr, String[] element, String[] expected, String[] element2) {
 		for (int j = 0; j < itr; j++) {
-			if (waitE.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element[j]))).isDisplayed()) {
-				String text = waitE.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element[j])))
-						.getText();
+			if (waitE.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element[j]))).isDisplayed()) {
+				String text = waitE.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element[j]))).getText();
 				if (text.equals(expected[j])) {
 					click(By.xpath(element[j]));
 					js = (JavascriptExecutor) driver;
 					js.executeScript("window.scrollBy(0,50)", "");
-					boolean value = waitE.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element2[j])))
+					boolean value = waitE.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element2[j])))
 							.isDisplayed();
 					Assert.assertTrue(value);
 					if (driver.findElement(DomainValuesElements.alert_button).isDisplayed()) {
@@ -183,6 +198,19 @@ public class BaseClass {
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
 		boolean value = waitE.until(ExpectedConditions.visibilityOfElementLocated(element)).isDisplayed();
 		Assert.assertTrue(value);
+	}
+
+	// Validation method for send keys elements
+	public static void validation(By element, By validation) {
+		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
+		String[] text = { "123", " ", "@$", "dha123" };
+		for (int i = 0; i < 4; i++) {
+			sendKeys(element, text[i]);
+			boolean value = waitE.until(ExpectedConditions.visibilityOfElementLocated(validation)).isDisplayed();
+			Assert.assertTrue(value);
+			waitE.until(ExpectedConditions.visibilityOfElementLocated(element)).clear();
+		}
+
 	}
 
 	// Click method with web element element
@@ -216,12 +244,6 @@ public class BaseClass {
 	public static void selectVisibleText(WebElement element, String visibletext) {
 		Select select = new Select(element);
 		select.selectByValue(visibletext);
-	}
-
-	@AfterClass
-	public void teardown() {
-		driver.close();
-		driver.quit();
 	}
 
 }
