@@ -4,7 +4,6 @@ import java.time.Duration;
 import java.util.List;
 
 import org.apache.commons.lang3.RandomStringUtils;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
