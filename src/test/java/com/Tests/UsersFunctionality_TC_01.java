@@ -15,7 +15,7 @@ public class UsersFunctionality_TC_01 extends BaseClass {
 	public void viewPageofUsers() {
 		login();
 
-		selectIndex(LoginElements.facility_dropdown, 1);
+		selectIndex(LoginElements.facility_dropdown, 2);
 
 		selectIndex(LoginElements.roles_dropdown, 1);
 

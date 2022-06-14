@@ -7,13 +7,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.Tests.UsersFunctionality_TC_02">
+      <class name="com.Tests.AddressTypeFunctionality_TC_02">
         <methods>
+          <include name="addressTypeTest"/>
           <include name="setup"/>
           <include name="teardown"/>
-          <include name="addProvider"/>
         </methods>
-      </class> <!-- com.Tests.UsersFunctionality_TC_02 -->
+      </class> <!-- com.Tests.AddressTypeFunctionality_TC_02 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

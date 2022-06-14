@@ -27,7 +27,7 @@ public class AddressTypeFunctionality_TC_02 extends BaseClass {
 		hover(DomainValuesElements.settings);
 
 		click(DomainValuesElements.domain_values);
-		click(DomainValuesElements.addresstype_button);
+//		click(DomainValuesElements.addresstype_button);
 
 		if (driver.findElement(AddressTypeElements.name).isDisplayed()
 				&& driver.findElement(AddressTypeElements.status).isDisplayed()
