@@ -45,6 +45,7 @@ public class UsersFunctionality_TC_02 extends BaseClass {
 		log.info("Clicked on add button");
 
 		Displayed(UserFunctionalityElements.details_btn);
+		
 
 		Displayed(UserFunctionalityElements.work_hours_btn);
 
@@ -55,17 +56,21 @@ public class UsersFunctionality_TC_02 extends BaseClass {
 		}
 
 		checkElements(UserFunctionalityData.create_user.length, UserFunctionalityData.create_user);
+		log.info("All create user pop-up validations are passed");
 
 		click(UserFunctionalityElements.save);
 		log.info("Clicked on save button");
 
 		checkElements(UserFunctionalityData.validations.length, UserFunctionalityData.validations);
+		log.info("All validation messages are displayed");
 
 		validation(UserFunctionalityElements.firstname, UserFunctionalityElements.f_validation);
+		log.info("Firstname passed all validations");
 
 		sendKeys(UserFunctionalityElements.firstname, "Alan");
 
 		validation(UserFunctionalityElements.lastname, UserFunctionalityElements.f_validation);
+		log.info("Lastname passed all valdations");
 
 		sendKeys(UserFunctionalityElements.lastname, "Walker");
 		
@@ -77,6 +82,7 @@ public class UsersFunctionality_TC_02 extends BaseClass {
 		Displayed(By.xpath("(//div[contains(.,'Select Role')])[15]"));
 
 		checkElements(UserFunctionalityData.select_role.length, UserFunctionalityData.select_role);
+		log.info("All elements are displaying in select role pop-up");
 
 		Thread.sleep(3000);
 	}
