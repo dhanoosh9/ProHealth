@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="21606" started-at="2022-06-15T15:22:12 IST" finished-at="2022-06-15T15:22:33 IST">
+  <suite name="Suite" duration-ms="25555" started-at="2022-06-15T21:13:12 IST" finished-at="2022-06-15T21:13:38 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="21606" started-at="2022-06-15T15:22:12 IST" finished-at="2022-06-15T15:22:33 IST">
+    <test name="Test" duration-ms="25555" started-at="2022-06-15T21:13:12 IST" finished-at="2022-06-15T21:13:38 IST">
       <class name="com.Tests.UsersFunctionality_TC_02">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.Tests.UsersFunctionality_TC_02@25be7b63]" name="setup" is-config="true" duration-ms="8162" started-at="2022-06-15T15:22:12 IST" finished-at="2022-06-15T15:22:20 IST">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.Tests.UsersFunctionality_TC_02@304bb45b]" name="setup" is-config="true" duration-ms="8944" started-at="2022-06-15T21:13:13 IST" finished-at="2022-06-15T21:13:22 IST">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="addProvider()[pri:0, instance:com.Tests.UsersFunctionality_TC_02@25be7b63]" name="addProvider" duration-ms="12367" started-at="2022-06-15T15:22:20 IST" finished-at="2022-06-15T15:22:33 IST">
+        <test-method status="PASS" signature="addProvider()[pri:0, instance:com.Tests.UsersFunctionality_TC_02@304bb45b]" name="addProvider" duration-ms="15275" started-at="2022-06-15T21:13:22 IST" finished-at="2022-06-15T21:13:37 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addProvider -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.Tests.UsersFunctionality_TC_02@25be7b63]" name="teardown" is-config="true" duration-ms="769" started-at="2022-06-15T15:22:33 IST" finished-at="2022-06-15T15:22:33 IST">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.Tests.UsersFunctionality_TC_02@304bb45b]" name="teardown" is-config="true" duration-ms="1059" started-at="2022-06-15T21:13:37 IST" finished-at="2022-06-15T21:13:38 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

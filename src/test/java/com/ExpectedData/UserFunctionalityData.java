@@ -15,6 +15,18 @@ public class UserFunctionalityData {
 			"//button[contains(.,'Save & Close')]", "(//button[contains(.,'Close')])[2]",
 			"(//span[contains(.,'×')])[2]" };
 
+	public static String[] provider_create_user = { "(//label[contains(.,'First Name*')])[1]",
+			"//label[contains(.,'Middle Name')]", "//label[contains(.,'Last Name*')]",
+			"//button[contains(.,'Select User Role')]", "//label[contains(.,'Provider No*')]",
+			"//label[contains(.,'NPI*')]", "//label[contains(.,'Taxonomy*')]",
+			"//label[contains(.,'Encounter Sign Pin*')]", "//label[contains(.,'Confirm Sign Pin*')]",
+			"//h4[contains(.,'Contact Information')]", "//label[contains(.,'Home Phone*')]",
+			"//label[contains(.,'Work Phone')]", "//label[contains(.,'Fax')]", "//label[contains(.,'Email*')]",
+			"//label[contains(.,'Mobile*')]", "//button[contains(.,'Upload Picture')]",
+			"//button[contains(.,'Take Selfie')]", "(//button[contains(.,'Save')])[1]",
+			"//button[contains(.,'Save & Close')]", "(//button[contains(.,'Close')])[2]",
+			"(//span[contains(.,'×')])[2]" };
+
 	public static String[] validations = { "(//span[contains(.,'Required')])[1]", "(//span[contains(.,'Required')])[2]",
 			"(//span[contains(.,'Required')])[3]", "(//span[contains(.,'Required')])[4]",
 			"(//span[contains(.,'Required')])[5]", "(//span[contains(.,'Required')])[6]",

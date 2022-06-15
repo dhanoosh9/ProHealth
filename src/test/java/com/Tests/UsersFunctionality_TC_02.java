@@ -83,6 +83,17 @@ public class UsersFunctionality_TC_02 extends BaseClass {
 
 		checkElements(UserFunctionalityData.select_role.length, UserFunctionalityData.select_role);
 		log.info("All elements are displaying in select role pop-up");
+		
+		click(UserFunctionalityElements.provider_cbox);
+		log.info("Selected provider checkbox");
+		
+		click(UserFunctionalityElements.ok_btn);
+		log.info("Clicked on ok button");
+		
+		checkElements(UserFunctionalityData.provider_create_user.length,UserFunctionalityData.provider_create_user);
+		log.info("All the elements in provider create user pop-up is displayed");
+		
+		sendKeys(UserFunctionalityElements.providerno,"qwe");
 
 		Thread.sleep(3000);
 	}
