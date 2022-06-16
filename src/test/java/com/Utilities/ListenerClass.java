@@ -39,6 +39,7 @@ public class ListenerClass extends BaseClass implements ITestListener {
 		System.out.println("Test is starting");
 		test = extent.createTest(result.getMethod().getMethodName());
 		extentTest.set(test);
+		
 	}
 
 	public void onTestSuccess(ITestResult result) {

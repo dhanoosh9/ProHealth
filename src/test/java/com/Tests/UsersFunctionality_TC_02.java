@@ -94,7 +94,9 @@ public class UsersFunctionality_TC_02 extends BaseClass {
 		log.info("All the elements in provider create user pop-up is displayed");
 		
 		sendKeys(UserFunctionalityElements.providerno,"qwe");
-
+		
+		
+		
 		Thread.sleep(3000);
 	}
 

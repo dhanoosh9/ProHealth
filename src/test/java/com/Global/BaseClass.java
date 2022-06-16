@@ -48,6 +48,8 @@ public class BaseClass {
 	public static By username = By.xpath("//input[@name='email']");
 	public static By password = By.xpath("//input[@name='password']");
 	public static By login_button = By.xpath("//button[contains(.,'LOGIN')]");
+	public static By admin_btn = By.xpath("//div[@title='User Info']");
+	public static By logout_btn = By.xpath("//a[contains(.,'Logout')]");
 
 	private static Logger log = LogManager.getLogger(BaseClass.class);
 
@@ -64,16 +66,18 @@ public class BaseClass {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}
+		log.info("Maximizing the window");
+		driver.manage().window().maximize();
 		log.info("Selected browser is: " + browserName);
 		log.info("Navigating to the URL");
 		driver.navigate().to(baseURL);
 		driver.manage().deleteAllCookies();
-		log.info("Maximizing the window");
-		driver.manage().window().maximize();
 	}
 
 	@AfterClass
 	public void teardown() {
+//		click(admin_btn);
+//		click(logout_btn);
 		driver.close();
 		driver.quit();
 	}
