@@ -39,7 +39,8 @@ public class BaseClass {
 	public static JavascriptExecutor js;
 
 	ReadConfig readconfig = new ReadConfig();
-	String baseURL = readconfig.getApplicationURL();
+	public String browser = readconfig.getbrowserName();
+	public String baseURL = readconfig.getApplicationURL();
 	public String Practice = readconfig.getPractice();
 	public String Username = readconfig.getUsername();
 	public String Password = readconfig.getPassword();

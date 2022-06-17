@@ -2,15 +2,48 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="34274" started-at="2022-06-16T21:26:17 IST" finished-at="2022-06-16T21:26:51 IST">
+  <suite name="Suite" duration-ms="21314" started-at="2022-06-18T00:21:14 IST" finished-at="2022-06-18T00:21:35 IST">
     <groups>
-      <group name="AddressType">
-        <method signature="AddressTypeFunctionality_TC_01.dashboardTest()[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_01@272113c4]" name="dashboardTest" class="com.Tests.AddressTypeFunctionality_TC_01"/>
-      </group> <!-- AddressType -->
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.testRunners.TestRunner@1c742ed4]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
     </groups>
-    <test name="Test" duration-ms="34274" started-at="2022-06-16T21:26:17 IST" finished-at="2022-06-16T21:26:51 IST">
-      <class name="com.Tests.AddressTypeFunctionality_TC_02">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_02@1ed6388a]" name="setup" is-config="true" duration-ms="3769" started-at="2022-06-16T21:26:44 IST" finished-at="2022-06-16T21:26:47 IST">
+    <test name="Test" duration-ms="21314" started-at="2022-06-18T00:21:14 IST" finished-at="2022-06-18T00:21:35 IST">
+      <class name="com.testRunners.TestRunner">
+        <test-method status="PASS" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.testRunners.TestRunner@1c742ed4]" name="setUpClass" is-config="true" duration-ms="494" started-at="2022-06-18T00:21:26 IST" finished-at="2022-06-18T00:21:26 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@305552d6]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.testRunners.TestRunner@1c742ed4]" name="runScenario" duration-ms="8668" started-at="2022-06-18T00:21:26 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-06-18T00:21:35 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify_view page of users functionality"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Verifying users functionality]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.testRunners.TestRunner@1c742ed4]" name="tearDownClass" is-config="true" duration-ms="113" started-at="2022-06-18T00:21:35 IST" finished-at="2022-06-18T00:21:35 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.testRunners.TestRunner -->
+      <class name="com.Tests.UsersFunctionality_TC_01">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.Tests.UsersFunctionality_TC_01@68c9d179]" name="setup" is-config="true" duration-ms="6834" started-at="2022-06-18T00:21:14 IST" finished-at="2022-06-18T00:21:21 IST">
           <params>
             <param index="0">
               <value>
@@ -21,36 +54,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="addressTypeTest()[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_02@1ed6388a]" name="addressTypeTest" duration-ms="2938" depends-on-groups="AddressType" started-at="2022-06-16T21:26:47 IST" finished-at="2022-06-16T21:26:50 IST">
+        <test-method status="PASS" signature="viewPageofUsers()[pri:0, instance:com.Tests.UsersFunctionality_TC_01@68c9d179]" name="viewPageofUsers" duration-ms="4110" started-at="2022-06-18T00:21:21 IST" finished-at="2022-06-18T00:21:25 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addressTypeTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_02@1ed6388a]" name="teardown" is-config="true" duration-ms="811" started-at="2022-06-16T21:26:50 IST" finished-at="2022-06-16T21:26:51 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.Tests.AddressTypeFunctionality_TC_02 -->
-      <class name="com.Tests.AddressTypeFunctionality_TC_01">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_01@272113c4]" name="setup" is-config="true" duration-ms="6406" started-at="2022-06-16T21:26:17 IST" finished-at="2022-06-16T21:26:23 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="dashboardTest()[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_01@272113c4]" name="dashboardTest" duration-ms="19242" started-at="2022-06-16T21:26:23 IST" finished-at="2022-06-16T21:26:43 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- dashboardTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.Tests.AddressTypeFunctionality_TC_01@272113c4]" name="teardown" is-config="true" duration-ms="844" started-at="2022-06-16T21:26:43 IST" finished-at="2022-06-16T21:26:44 IST">
+        </test-method> <!-- viewPageofUsers -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.Tests.UsersFunctionality_TC_01@68c9d179]" name="teardown" is-config="true" duration-ms="795" started-at="2022-06-18T00:21:25 IST" finished-at="2022-06-18T00:21:26 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.Tests.AddressTypeFunctionality_TC_01 -->
+      </class> <!-- com.Tests.UsersFunctionality_TC_01 -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
