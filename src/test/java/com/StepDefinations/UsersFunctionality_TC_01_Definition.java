@@ -41,8 +41,8 @@ public class UsersFunctionality_TC_01_Definition extends BaseClass {
 
 	@After
 	public void tearDown() {
-//		click(admin_btn);
-//		click(logout_btn);
+		click(admin_btn);
+		click(logout_btn);
 		driver.quit();
 	}
 

@@ -12,7 +12,6 @@
 				<class name="com.Tests.UsersFunctionality_TC_01"></class>
 				<class name="com.Tests.UsersFunctionality_TC_02"></class>
 				 -->
-			<class name="com.Tests.UsersFunctionality_TC_01"></class>
 			<class name="com.testRunners.TestRunner"></class>
 		</classes>
 	</test> <!-- Test -->
