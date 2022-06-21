@@ -149,16 +149,14 @@ public class BaseClass {
 		wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
 				.pollingEvery(Duration.ofSeconds(10))
 				.ignoring(NoSuchElementException.class, StaleElementReferenceException.class);
-		log.info("Validating the select element is displayed or not");
 		if (wait.until(ExpectedConditions.presenceOfElementLocated(element)).isDisplayed()) {
-			log.info("The given select element is displayed");
 			Select select = new Select(wait.until(ExpectedConditions.presenceOfElementLocated(element)));
 			List<WebElement> options = select.getOptions();
 			for (WebElement ele : options) {
 				boolean value = false;
 				for (int i = 0; i < expected.length; i++) {
 					if (ele.getText().equals(expected[i])) {
-						log.debug("Actual: " + ele.getText() + " matched " + "Expected: " + expected[i]);
+						System.out.println("Actual: " + ele.getText() + " matched " + "Expected: " + expected[i]);
 						value = true;
 					}
 				}

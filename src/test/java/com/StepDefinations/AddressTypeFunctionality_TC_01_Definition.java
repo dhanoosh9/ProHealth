@@ -41,10 +41,8 @@ public class AddressTypeFunctionality_TC_01_Definition extends BaseClass {
 			selectIndex(LoginElements.facility_dropdown, 1, expected);
 		}
 
-		if (driver.findElement(LoginElements.roles_dropdown).isDisplayed()) {
-			String expected[] = { "---select---", "ADMIN" };
-			selectIndex(LoginElements.roles_dropdown, 1, expected);
-		}
+		selectIndex(LoginElements.roles_dropdown, 1);
+		
 	}
 
 	@Then("^Click on Login button$")
