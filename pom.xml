@@ -126,6 +126,14 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.10.1</version>
+				<configuration>
+					<!-- put your configurations here -->
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M6</version>
 				<configuration>
@@ -133,7 +141,42 @@
 						<!-- ${testng}-->
 						<suiteXmlFile>${testngFile}</suiteXmlFile>
 					</suiteXmlFiles>
+					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+				<version>5.7.0</version>
+				<executions>
+					<execution>
+						<id>execution</id>
+						<phase>test</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<projectName>ProHealth</projectName>
+							<!-- optional, per documentation set this to "true" to bypass generation of Cucumber Reports entirely, defaults to false if not specified -->
+							<skip>false</skip>
+							<!-- output directory for the generated report ${project.build.directory}-->
+							<outputDirectory>${basedir}</outputDirectory>
+							<!-- optional, defaults to outputDirectory if not specified ${project.build.directory}-->
+							<inputDirectory>JSONReports</inputDirectory>
+							<jsonFiles>
+								<!-- supports wildcard or name pattern -->
+								<param>**/*.json</param>
+							</jsonFiles>
+							<classificationDirectory>${basedir}/PropertyLocation</classificationDirectory>
+							<classificationFiles>
+                                    <!-- supports wildcard or name pattern -->
+                                    <param>Browser.properties</param>
+                            </classificationFiles>
+							<!-- optional, set true to fail build on test failures -->
+							<checkBuildResult>true</checkBuildResult>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
