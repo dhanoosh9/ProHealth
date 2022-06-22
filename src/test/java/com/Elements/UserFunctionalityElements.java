@@ -19,6 +19,9 @@ public class UserFunctionalityElements {
 	public static By provider_cbox = By.xpath("//input[contains(@value,'Provider')]");
 	public static By ok_btn = By.xpath("//button[contains(.,'Ok')]");
 	public static By providerno = By.xpath("//input[@name='providerNo']");
+	public static By npi = By.xpath("//input[@name='npi']");
+	public static By taxonomy = By.xpath("//input[@name='taxonomy']");
+	public static By encountersignpin = By.xpath("//input[@name='encounterSignPin']");
 	
 	
 	public static By edit_btn = By.xpath("//*[@id=\"main\"]/div[2]/div[2]/table/tbody/tr[1]/td[8]/div/span[1]");

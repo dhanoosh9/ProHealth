@@ -240,7 +240,8 @@ public class BaseClass {
 			sendKeys(element, text[i]);
 			boolean value = waitE.until(ExpectedConditions.visibilityOfElementLocated(validation)).isDisplayed();
 			Assert.assertTrue(value);
-			waitE.until(ExpectedConditions.visibilityOfElementLocated(element)).clear();
+//			waitE.until(ExpectedConditions.visibilityOfElementLocated(element)).clear();
+			driver.findElement(element).clear();
 		}
 
 	}

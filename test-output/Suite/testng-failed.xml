@@ -7,13 +7,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.testRunners.TestRunner">
+      <class name="com.Tests.UsersFunctionality_TC_02">
         <methods>
-          <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="0 1"/>
-          <include name="tearDownClass"/>
+          <include name="setup"/>
+          <include name="teardown"/>
+          <include name="addProvider"/>
         </methods>
-      </class> <!-- com.testRunners.TestRunner -->
+      </class> <!-- com.Tests.UsersFunctionality_TC_02 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
