@@ -1,5 +1,7 @@
 package com.Tests;
 
+import java.time.Duration;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -19,7 +21,7 @@ public class UsersFunctionality_TC_02 extends BaseClass {
 
 	@Test
 	public void addProvider() throws InterruptedException {
-
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		login();
 		log.info("Login successfull");
 
@@ -91,7 +93,7 @@ public class UsersFunctionality_TC_02 extends BaseClass {
 		log.info("All the elements in provider create user pop-up is displayed");
 
 		regval("//label[contains(.,'Provider No*')]", UserFunctionalityElements.providerno, "Provider No*", "abc @%",
-				"234", "23");
+				"044", "04");
 
 		regval("//label[contains(.,'NPI*')]", UserFunctionalityElements.npi, "NPI*", "ab @*", "56637106581",
 				"5663710658");
@@ -99,6 +101,38 @@ public class UsersFunctionality_TC_02 extends BaseClass {
 		regval("//label[contains(.,'Taxonomy*')]", UserFunctionalityElements.taxonomy, "Taxonomy*", "ab @*",
 				"51935794510", "5193579451");
 
+		regval("//label[contains(.,'Encounter Sign Pin*')]", UserFunctionalityElements.encountersignpin,
+				"Encounter Sign Pin*", "de #$", "02345", "0234");
+		Displayed(By.xpath("(//span[@class='showError'])[8]"));
+		driver.findElement(UserFunctionalityElements.encountersignpin).clear();
+		sendKeys(UserFunctionalityElements.encountersignpin, "1234");
+
+		regval("//label[contains(.,'Confirm Sign Pin*')]", UserFunctionalityElements.confirmsignpin,
+				"Confirm Sign Pin*", "gh ^&", "52145", "5214");
+		Displayed(By.xpath("(//span[@class='showError'])[9]"));
+		driver.findElement(UserFunctionalityElements.confirmsignpin).clear();
+		sendKeys(UserFunctionalityElements.confirmsignpin, "1234");
+
+		regval("//label[contains(.,'Home Phone*')]", UserFunctionalityElements.homephone, "Home Phone*", "ij *&",
+				"(456) 598-52225", "(456) 598-5222");
+
+		Displayed(By.xpath("//label[contains(.,'Email*')]"));
+		sendKeys(UserFunctionalityElements.email, "ayan123");
+		Displayed(By.xpath("//span[contains(.,'Invalid email type')]"));
+		driver.findElement(UserFunctionalityElements.email).clear();
+		sendKeys(UserFunctionalityElements.email, "ayan123@gmail.com");
+
+		regval("//label[contains(.,'Mobile*')]", UserFunctionalityElements.mobile, "Mobile*", "kl @#", "(456) 588-888",
+				"(456) 588-888");
+		Displayed(By.xpath("//span[contains(.,'Invalid mobile Number')]"));
+		driver.findElement(UserFunctionalityElements.mobile).clear();
+		sendKeys(UserFunctionalityElements.mobile,"5248796354");
+		
+		click(UserFunctionalityElements.save);
+		
+//		Assert.assertEquals(waitE.until(ExpectedConditions.visibilityOfElementLocated(UserFunctionalityElements.work_hours_btn))
+//				.isEnabled(), true);
+		
 		Thread.sleep(3000);
 	}
 

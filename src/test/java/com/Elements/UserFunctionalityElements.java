@@ -13,8 +13,6 @@ public class UserFunctionalityElements {
 	public static By lastname = By.name("lastName");
 	public static By select_user_role = By.xpath("//button[contains(.,'Select User Role')]");
 	public static By f_validation  = By.xpath("//span[contains(.,'Only alphabets are allowed')]");
-	public static By work_hours_btn = By.xpath("//button[contains(.,'Work Hours')]");
-	public static By save = By.xpath("(//button[contains(.,'Save')])[1]");
 	public static By required = By.xpath("(//span[contains(.,'Required')])");
 	public static By provider_cbox = By.xpath("//input[contains(@value,'Provider')]");
 	public static By ok_btn = By.xpath("//button[contains(.,'Ok')]");
@@ -22,6 +20,12 @@ public class UserFunctionalityElements {
 	public static By npi = By.xpath("//input[@name='npi']");
 	public static By taxonomy = By.xpath("//input[@name='taxonomy']");
 	public static By encountersignpin = By.xpath("//input[@name='encounterSignPin']");
+	public static By confirmsignpin = By.xpath("//input[@name='confirmSignPin']");
+	public static By homephone = By.xpath("//input[@name='homePhone']");
+	public static By email = By.xpath("//input[@name='email']");
+	public static By mobile = By.xpath("//input[@name='mobilePhone']");
+	public static By work_hours_btn = By.xpath("//button[contains(.,'Work Hours')]");
+	public static By save = By.xpath("(//button[contains(.,'Save')])[1]");
 	
 	
 	public static By edit_btn = By.xpath("//*[@id=\"main\"]/div[2]/div[2]/table/tbody/tr[1]/td[8]/div/span[1]");
