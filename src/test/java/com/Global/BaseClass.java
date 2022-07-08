@@ -147,7 +147,7 @@ public class BaseClass {
 	public static void selectIndex(By element, int index, String[] expected) {
 //			waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
-				.pollingEvery(Duration.ofSeconds(10))
+				.pollingEvery(Duration.ofSeconds(3))
 				.ignoring(NoSuchElementException.class, StaleElementReferenceException.class);
 		if (wait.until(ExpectedConditions.presenceOfElementLocated(element)).isDisplayed()) {
 			Select select = new Select(wait.until(ExpectedConditions.presenceOfElementLocated(element)));

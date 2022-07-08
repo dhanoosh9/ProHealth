@@ -71,9 +71,9 @@ public class ListenerClass extends BaseClass implements ITestListener {
 //		System.out.println("Failed but has success?");
 //	}
 //
-//	public void onTestFailedWithTimeout(ITestResult result) {
-//		System.out.println("Test failed due to timeout - retry");
-//	}
+	public void onTestFailedWithTimeout(ITestResult result) {
+		System.out.println("Test failed due to timeout - retry");
+	}
 
 	public void onFinish(ITestContext context) {
 		System.out.println("Ending...");

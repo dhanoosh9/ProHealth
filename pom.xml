@@ -163,9 +163,9 @@
 							</jsonFiles>
 							<classificationDirectory>${basedir}/PropertyLocation</classificationDirectory>
 							<classificationFiles>
-                                    <!-- supports wildcard or name pattern -->
-                                    <param>Browser.properties</param>
-                            </classificationFiles>
+								<!-- supports wildcard or name pattern -->
+								<param>Browser.properties</param>
+							</classificationFiles>
 							<!-- optional, set true to fail build on test failures -->
 							<checkBuildResult>true</checkBuildResult>
 						</configuration>

@@ -3,6 +3,7 @@
 <suite name="Suite">
 	<listeners>
 		<listener class-name="com.Utilities.ListenerClass"></listener>
+		<listener class-name="com.Utilities.AnnotationTransformer"></listener>
 	</listeners>
 	<parameter name="browser" value="chrome"></parameter>
 	<test name="Test">

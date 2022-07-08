@@ -31,8 +31,8 @@ public class AddressTypeFunctionality_TC_01 extends BaseClass {
 		Assert.assertTrue(login_validation);
 
 		if (driver.findElement(LoginElements.facility_dropdown).isDisplayed()) {
-			String expected[] = { "---select---", "Apollo", "cipla", "Dental", "Pharma" };
-			selectIndex(LoginElements.facility_dropdown, 1, expected);
+//			String expected[] = { "---select---", "Apollo", "cipla", "Dental", "Pharma" };
+			selectIndex(LoginElements.facility_dropdown, 1);
 		}
 
 		if (driver.findElement(LoginElements.roles_dropdown).isDisplayed()) {
