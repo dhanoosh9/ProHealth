@@ -1,0 +1,326 @@
+19:58:58.748 [main] INFO  com.Global.BaseClass - Selected browser is: chrome
+19:58:58.757 [main] INFO  com.Global.BaseClass - Navigating to the URL
+19:59:00.122 [main] INFO  com.Global.BaseClass - Maximizing the window
+19:59:00.324 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:00.473 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:00.613 [main] INFO  com.Global.BaseClass - Entered user in the box
+19:59:00.613 [main] INFO  com.Global.BaseClass - Entered practice type
+19:59:00.613 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:00.672 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:00.939 [main] INFO  com.Global.BaseClass - Entered admin in the box
+19:59:00.939 [main] INFO  com.Global.BaseClass - Entered the username
+19:59:00.939 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:01.025 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:01.228 [main] INFO  com.Global.BaseClass - Entered 123qwe in the box
+19:59:01.229 [main] INFO  com.Global.BaseClass - Entered the password
+19:59:01.229 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:01.388 [main] INFO  com.Global.BaseClass - The button LOGIN is displayed
+19:59:01.472 [main] DEBUG com.Global.BaseClass - Clicking on the button: LOGIN
+19:59:01.607 [main] INFO  com.Global.BaseClass - Clicked on login button
+19:59:02.277 [main] INFO  com.Global.BaseClass - Validating the select element is displayed or not
+19:59:02.308 [main] INFO  com.Global.BaseClass - The given select element is displayed
+19:59:02.392 [main] DEBUG com.Global.BaseClass - Actual: ---select--- matched Expected: ---select---
+19:59:02.475 [main] DEBUG com.Global.BaseClass - Actual: Apollo matched Expected: Apollo
+19:59:02.554 [main] DEBUG com.Global.BaseClass - Actual: cipla matched Expected: cipla
+19:59:02.629 [main] DEBUG com.Global.BaseClass - Actual: Dental matched Expected: Dental
+19:59:02.709 [main] DEBUG com.Global.BaseClass - Actual: Pharma matched Expected: Pharma
+19:59:02.709 [main] DEBUG com.Global.BaseClass - selecting the value: 1
+19:59:02.894 [main] INFO  com.Global.BaseClass - Validating the select element is displayed or not
+19:59:02.923 [main] INFO  com.Global.BaseClass - The given select element is displayed
+19:59:02.994 [main] DEBUG com.Global.BaseClass - Actual: ---select--- matched Expected: ---select---
+19:59:03.042 [main] DEBUG com.Global.BaseClass - Actual: ADMIN matched Expected: ADMIN
+19:59:03.042 [main] DEBUG com.Global.BaseClass - selecting the value: 1
+19:59:03.194 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:03.299 [main] INFO  com.Global.BaseClass - The button LOGIN is displayed
+19:59:03.357 [main] DEBUG com.Global.BaseClass - Clicking on the button: LOGIN
+19:59:03.688 [main] INFO  com.Global.BaseClass - Validating that the element is displayed
+19:59:04.387 [main] DEBUG com.Global.BaseClass - Hovering on the element: 
+19:59:04.573 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:04.760 [main] INFO  com.Global.BaseClass - The button Domain Values is displayed
+19:59:04.842 [main] DEBUG com.Global.BaseClass - Clicking on the button: Domain Values
+19:59:05.808 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:05.919 [main] INFO  com.Global.BaseClass - The button Address Type is displayed
+19:59:05.974 [main] DEBUG com.Global.BaseClass - Clicking on the button: Address Type
+19:59:06.345 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:06.450 [main] INFO  com.Global.BaseClass - The button Adjustment Code is displayed
+19:59:06.503 [main] DEBUG com.Global.BaseClass - Clicking on the button: Adjustment Code
+19:59:06.747 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:06.829 [main] INFO  com.Global.BaseClass - The button Adjustment Remark Code is displayed
+19:59:06.879 [main] DEBUG com.Global.BaseClass - Clicking on the button: Adjustment Remark Code
+19:59:07.153 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:07.249 [main] INFO  com.Global.BaseClass - The button Adjustment Type is displayed
+19:59:07.307 [main] DEBUG com.Global.BaseClass - Clicking on the button: Adjustment Type
+19:59:07.533 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:07.609 [main] INFO  com.Global.BaseClass - The button Appointment Source is displayed
+19:59:07.655 [main] DEBUG com.Global.BaseClass - Clicking on the button: Appointment Source
+19:59:07.886 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:07.957 [main] INFO  com.Global.BaseClass - The button Appointment Status is displayed
+19:59:07.999 [main] DEBUG com.Global.BaseClass - Clicking on the button: Appointment Status
+19:59:08.229 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:08.313 [main] INFO  com.Global.BaseClass - The button Appointment Type is displayed
+19:59:08.364 [main] DEBUG com.Global.BaseClass - Clicking on the button: Appointment Type
+19:59:08.587 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:08.658 [main] INFO  com.Global.BaseClass - The button Business Unit Type is displayed
+19:59:08.703 [main] DEBUG com.Global.BaseClass - Clicking on the button: Business Unit Type
+19:59:08.912 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:09.007 [main] INFO  com.Global.BaseClass - The button Claim Status is displayed
+19:59:09.055 [main] DEBUG com.Global.BaseClass - Clicking on the button: Claim Status
+19:59:09.285 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:09.361 [main] INFO  com.Global.BaseClass - The button Country is displayed
+19:59:09.429 [main] DEBUG com.Global.BaseClass - Clicking on the button: Country
+19:59:09.714 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:09.799 [main] INFO  com.Global.BaseClass - The button Document Type is displayed
+19:59:09.841 [main] DEBUG com.Global.BaseClass - Clicking on the button: Document Type
+19:59:10.059 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:10.135 [main] INFO  com.Global.BaseClass - The button Duration is displayed
+19:59:10.182 [main] DEBUG com.Global.BaseClass - Clicking on the button: Duration
+19:59:10.532 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:10.655 [main] INFO  com.Global.BaseClass - The button Enthnicity is displayed
+19:59:10.715 [main] DEBUG com.Global.BaseClass - Clicking on the button: Enthnicity
+19:59:11.049 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:11.139 [main] INFO  com.Global.BaseClass - The button Gender is displayed
+19:59:11.195 [main] DEBUG com.Global.BaseClass - Clicking on the button: Gender
+19:59:11.430 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:11.509 [main] INFO  com.Global.BaseClass - The button Hospital is displayed
+19:59:11.555 [main] DEBUG com.Global.BaseClass - Clicking on the button: Hospital
+19:59:11.807 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:11.891 [main] INFO  com.Global.BaseClass - The button Hospital Services is displayed
+19:59:11.949 [main] DEBUG com.Global.BaseClass - Clicking on the button: Hospital Services
+19:59:12.199 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:12.292 [main] INFO  com.Global.BaseClass - The button ICD Type is displayed
+19:59:12.352 [main] DEBUG com.Global.BaseClass - Clicking on the button: ICD Type
+19:59:12.612 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:12.689 [main] INFO  com.Global.BaseClass - The button Identifier Type is displayed
+19:59:12.733 [main] DEBUG com.Global.BaseClass - Clicking on the button: Identifier Type
+19:59:12.963 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:13.046 [main] INFO  com.Global.BaseClass - The button Insurance Type is displayed
+19:59:13.116 [main] DEBUG com.Global.BaseClass - Clicking on the button: Insurance Type
+19:59:13.341 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:13.414 [main] INFO  com.Global.BaseClass - The button Marital Status is displayed
+19:59:13.458 [main] DEBUG com.Global.BaseClass - Clicking on the button: Marital Status
+19:59:13.716 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:13.830 [main] INFO  com.Global.BaseClass - The button Patient Type is displayed
+19:59:13.939 [main] DEBUG com.Global.BaseClass - Clicking on the button: Patient Type
+19:59:14.213 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:14.283 [main] INFO  com.Global.BaseClass - The button Payer Preference is displayed
+19:59:14.327 [main] DEBUG com.Global.BaseClass - Clicking on the button: Payer Preference
+19:59:14.554 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:14.644 [main] INFO  com.Global.BaseClass - The button Payer Type is displayed
+19:59:14.686 [main] DEBUG com.Global.BaseClass - Clicking on the button: Payer Type
+19:59:14.921 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:15.009 [main] INFO  com.Global.BaseClass - The button Payment Method is displayed
+19:59:15.063 [main] DEBUG com.Global.BaseClass - Clicking on the button: Payment Method
+19:59:15.323 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:15.400 [main] INFO  com.Global.BaseClass - The button Payment Source is displayed
+19:59:15.450 [main] DEBUG com.Global.BaseClass - Clicking on the button: Payment Source
+19:59:15.755 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:15.864 [main] INFO  com.Global.BaseClass - The button Payment Type is displayed
+19:59:15.926 [main] DEBUG com.Global.BaseClass - Clicking on the button: Payment Type
+19:59:16.231 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:16.338 [main] INFO  com.Global.BaseClass - The button POS is displayed
+19:59:16.393 [main] DEBUG com.Global.BaseClass - Clicking on the button: POS
+19:59:16.677 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:16.765 [main] INFO  com.Global.BaseClass - The button Qualifier is displayed
+19:59:16.816 [main] DEBUG com.Global.BaseClass - Clicking on the button: Qualifier
+19:59:17.065 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:17.153 [main] INFO  com.Global.BaseClass - The button Race is displayed
+19:59:17.200 [main] DEBUG com.Global.BaseClass - Clicking on the button: Race
+19:59:17.478 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:17.574 [main] INFO  com.Global.BaseClass - The button Relationship is displayed
+19:59:17.633 [main] DEBUG com.Global.BaseClass - Clicking on the button: Relationship
+19:59:17.932 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:18.029 [main] INFO  com.Global.BaseClass - The button Reminder Frequency is displayed
+19:59:18.094 [main] DEBUG com.Global.BaseClass - Clicking on the button: Reminder Frequency
+19:59:18.383 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:18.536 [main] INFO  com.Global.BaseClass - The button Reminder Preference is displayed
+19:59:18.603 [main] DEBUG com.Global.BaseClass - Clicking on the button: Reminder Preference
+19:59:18.909 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:19.007 [main] INFO  com.Global.BaseClass - The button Role is displayed
+19:59:19.065 [main] DEBUG com.Global.BaseClass - Clicking on the button: Role
+19:59:19.411 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:19.508 [main] INFO  com.Global.BaseClass - The button Room is displayed
+19:59:19.571 [main] DEBUG com.Global.BaseClass - Clicking on the button: Room
+19:59:19.879 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:19.979 [main] INFO  com.Global.BaseClass - The button Salutation is displayed
+19:59:20.036 [main] DEBUG com.Global.BaseClass - Clicking on the button: Salutation
+19:59:20.323 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:20.415 [main] INFO  com.Global.BaseClass - The button Smoking Status is displayed
+19:59:20.472 [main] DEBUG com.Global.BaseClass - Clicking on the button: Smoking Status
+19:59:20.772 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:20.859 [main] INFO  com.Global.BaseClass - The button Smoking Frequency is displayed
+19:59:20.915 [main] DEBUG com.Global.BaseClass - Clicking on the button: Smoking Frequency
+19:59:21.162 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:21.249 [main] INFO  com.Global.BaseClass - The button Smoking Units is displayed
+19:59:21.303 [main] DEBUG com.Global.BaseClass - Clicking on the button: Smoking Units
+19:59:21.566 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:21.653 [main] INFO  com.Global.BaseClass - The button State is displayed
+19:59:21.706 [main] DEBUG com.Global.BaseClass - Clicking on the button: State
+19:59:21.973 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:22.060 [main] INFO  com.Global.BaseClass - The button Superbill Status is displayed
+19:59:22.114 [main] DEBUG com.Global.BaseClass - Clicking on the button: Superbill Status
+19:59:22.400 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:22.490 [main] INFO  com.Global.BaseClass - The button Transaction Type is displayed
+19:59:22.544 [main] DEBUG com.Global.BaseClass - Clicking on the button: Transaction Type
+19:59:22.845 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:22.929 [main] INFO  com.Global.BaseClass - The button User Type is displayed
+19:59:22.983 [main] DEBUG com.Global.BaseClass - Clicking on the button: User Type
+19:59:23.270 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:23.360 [main] INFO  com.Global.BaseClass - The button Week is displayed
+19:59:23.415 [main] DEBUG com.Global.BaseClass - Clicking on the button: Week
+19:59:26.204 [main] INFO  com.Global.BaseClass - Selected browser is: chrome
+19:59:26.205 [main] INFO  com.Global.BaseClass - Navigating to the URL
+19:59:28.316 [main] INFO  com.Global.BaseClass - Maximizing the window
+19:59:28.442 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:28.540 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:28.707 [main] INFO  com.Global.BaseClass - Entered user in the box
+19:59:28.707 [main] INFO  com.Global.BaseClass - Entered practice type
+19:59:28.707 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:28.746 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:28.858 [main] INFO  com.Global.BaseClass - Entered admin in the box
+19:59:28.858 [main] INFO  com.Global.BaseClass - Entered the username
+19:59:28.858 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:28.908 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:29.027 [main] INFO  com.Global.BaseClass - Entered 123qwe in the box
+19:59:29.028 [main] INFO  com.Global.BaseClass - Entered the password
+19:59:29.028 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:29.144 [main] INFO  com.Global.BaseClass - The button LOGIN is displayed
+19:59:29.208 [main] DEBUG com.Global.BaseClass - Clicking on the button: LOGIN
+19:59:29.289 [main] INFO  com.Global.BaseClass - Clicked on login button
+19:59:30.267 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:30.348 [main] INFO  com.Global.BaseClass - The button LOGIN is displayed
+19:59:30.392 [main] DEBUG com.Global.BaseClass - Clicking on the button: LOGIN
+19:59:30.560 [main] INFO  com.Global.BaseClass - Validating that the element is displayed
+19:59:31.234 [main] DEBUG com.Global.BaseClass - Hovering on the element: 
+19:59:31.376 [main] INFO  com.Global.BaseClass - Validating that the element is displayed
+19:59:31.593 [main] DEBUG com.Global.BaseClass - Hovering on the element: Security
+19:59:31.733 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:31.876 [main] INFO  com.Global.BaseClass - The button Users is displayed
+19:59:31.945 [main] DEBUG com.Global.BaseClass - Clicking on the button: Users
+19:59:32.134 [main] INFO  com.Global.BaseClass - Verifying the element is displayed
+19:59:32.200 [main] INFO  com.Global.BaseClass - The given element is displayed
+19:59:32.204 [main] INFO  com.Global.BaseClass - Verifying that all elements are displayed
+19:59:32.574 [main] INFO  com.Global.BaseClass - All the elements are displayed
+19:59:32.574 [main] INFO  com.Global.BaseClass - Verifying the element is displayed
+19:59:32.677 [main] INFO  com.Global.BaseClass - The given element is displayed
+19:59:35.121 [main] INFO  com.Global.BaseClass - Selected browser is: chrome
+19:59:35.121 [main] INFO  com.Global.BaseClass - Navigating to the URL
+19:59:37.096 [main] INFO  com.Global.BaseClass - Maximizing the window
+19:59:37.242 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:37.317 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:37.459 [main] INFO  com.Global.BaseClass - Entered user in the box
+19:59:37.459 [main] INFO  com.Global.BaseClass - Entered practice type
+19:59:37.459 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:37.504 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:37.603 [main] INFO  com.Global.BaseClass - Entered admin in the box
+19:59:37.603 [main] INFO  com.Global.BaseClass - Entered the username
+19:59:37.603 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:37.645 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:37.754 [main] INFO  com.Global.BaseClass - Entered 123qwe in the box
+19:59:37.754 [main] INFO  com.Global.BaseClass - Entered the password
+19:59:37.754 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:37.833 [main] INFO  com.Global.BaseClass - The button LOGIN is displayed
+19:59:37.876 [main] DEBUG com.Global.BaseClass - Clicking on the button: LOGIN
+19:59:37.953 [main] INFO  com.Global.BaseClass - Clicked on login button
+19:59:37.954 [main] INFO  com.Tests.UsersFunctionality_TC_02 - Login successfull
+19:59:38.806 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:38.886 [main] INFO  com.Global.BaseClass - The button LOGIN is displayed
+19:59:38.931 [main] DEBUG com.Global.BaseClass - Clicking on the button: LOGIN
+19:59:39.091 [main] INFO  com.Tests.UsersFunctionality_TC_02 - Clicked on login button
+19:59:39.091 [main] INFO  com.Global.BaseClass - Validating that the element is displayed
+19:59:39.717 [main] DEBUG com.Global.BaseClass - Hovering on the element: 
+19:59:39.850 [main] INFO  com.Tests.UsersFunctionality_TC_02 - Hovered on settings option
+19:59:39.854 [main] INFO  com.Global.BaseClass - Validating that the element is displayed
+19:59:40.024 [main] DEBUG com.Global.BaseClass - Hovering on the element: Security
+19:59:40.160 [main] INFO  com.Tests.UsersFunctionality_TC_02 - Hovered on security option
+19:59:40.160 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:40.380 [main] INFO  com.Global.BaseClass - The button Users is displayed
+19:59:40.456 [main] DEBUG com.Global.BaseClass - Clicking on the button: Users
+19:59:40.644 [main] INFO  com.Tests.UsersFunctionality_TC_02 - Clicked on users button
+19:59:40.644 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:40.743 [main] INFO  com.Global.BaseClass - The button Add is displayed
+19:59:40.788 [main] DEBUG com.Global.BaseClass - Clicking on the button: Add
+19:59:41.356 [main] INFO  com.Tests.UsersFunctionality_TC_02 - Clicked on add button
+19:59:41.356 [main] INFO  com.Global.BaseClass - Verifying the element is displayed
+19:59:41.507 [main] INFO  com.Global.BaseClass - The given element is displayed
+19:59:41.507 [main] INFO  com.Global.BaseClass - Verifying the element is displayed
+19:59:41.556 [main] INFO  com.Global.BaseClass - The given element is displayed
+19:59:41.593 [main] INFO  com.Global.BaseClass - Verifying that all elements are displayed
+19:59:42.364 [main] INFO  com.Global.BaseClass - All the elements are displayed
+19:59:42.364 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:42.452 [main] INFO  com.Global.BaseClass - The button Save is displayed
+19:59:42.498 [main] DEBUG com.Global.BaseClass - Clicking on the button: Save
+19:59:42.594 [main] INFO  com.Tests.UsersFunctionality_TC_02 - Clicked on save button
+19:59:42.595 [main] INFO  com.Global.BaseClass - Verifying that all elements are displayed
+19:59:42.965 [main] INFO  com.Global.BaseClass - All the elements are displayed
+19:59:42.966 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:43.017 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:43.158 [main] INFO  com.Global.BaseClass - Entered 123 in the box
+19:59:43.282 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:43.327 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:43.444 [main] INFO  com.Global.BaseClass - Entered   in the box
+19:59:43.750 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:43.792 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:43.882 [main] INFO  com.Global.BaseClass - Entered @$ in the box
+19:59:43.983 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:44.024 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:44.148 [main] INFO  com.Global.BaseClass - Entered dha123 in the box
+19:59:44.259 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:44.317 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:44.445 [main] INFO  com.Global.BaseClass - Entered Alan in the box
+19:59:44.445 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:44.497 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:44.615 [main] INFO  com.Global.BaseClass - Entered 123 in the box
+19:59:44.843 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:44.893 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:45.024 [main] INFO  com.Global.BaseClass - Entered   in the box
+19:59:45.117 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:45.164 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:45.264 [main] INFO  com.Global.BaseClass - Entered @$ in the box
+19:59:45.362 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:45.425 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:45.545 [main] INFO  com.Global.BaseClass - Entered dha123 in the box
+19:59:45.652 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:45.694 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:45.824 [main] INFO  com.Global.BaseClass - Entered Walker in the box
+19:59:45.824 [main] INFO  com.Global.BaseClass - Validating the select element is displayed or not
+19:59:45.860 [main] INFO  com.Global.BaseClass - The given select element is displayed
+19:59:45.926 [main] DEBUG com.Global.BaseClass - Actual: -- select -- matched Expected: -- select --
+19:59:45.993 [main] DEBUG com.Global.BaseClass - Actual: Mrs matched Expected: Mrs
+19:59:46.059 [main] DEBUG com.Global.BaseClass - Actual: Mr matched Expected: Mr
+19:59:46.128 [main] DEBUG com.Global.BaseClass - Actual: Miss matched Expected: Miss
+19:59:46.128 [main] DEBUG com.Global.BaseClass - selecting the value: 2
+19:59:46.299 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:46.393 [main] INFO  com.Global.BaseClass - The button Select User Role is displayed
+19:59:46.446 [main] DEBUG com.Global.BaseClass - Clicking on the button: Select User Role
+19:59:46.545 [main] INFO  com.Tests.UsersFunctionality_TC_02 - Clicked on select user role button
+19:59:46.545 [main] INFO  com.Global.BaseClass - Verifying the element is displayed
+19:59:46.598 [main] INFO  com.Global.BaseClass - The given element is displayed
+19:59:46.598 [main] INFO  com.Global.BaseClass - Verifying that all elements are displayed
+19:59:46.958 [main] INFO  com.Global.BaseClass - All the elements are displayed
+19:59:53.984 [main] INFO  com.Global.BaseClass - Selected browser is: chrome
+19:59:53.984 [main] INFO  com.Global.BaseClass - Navigating to the URL
+19:59:56.104 [main] INFO  com.Global.BaseClass - Maximizing the window
+19:59:56.245 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:56.325 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:56.462 [main] INFO  com.Global.BaseClass - Entered user in the box
+19:59:56.462 [main] INFO  com.Global.BaseClass - Entered practice type
+19:59:56.462 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:56.507 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:56.608 [main] INFO  com.Global.BaseClass - Entered admin in the box
+19:59:56.608 [main] INFO  com.Global.BaseClass - Entered the username
+19:59:56.608 [main] INFO  com.Global.BaseClass - Verifying the given sendkeys element is displayed or not
+19:59:56.649 [main] INFO  com.Global.BaseClass - The sendkeys element is displayed
+19:59:56.756 [main] INFO  com.Global.BaseClass - Entered 123qwe in the box
+19:59:56.756 [main] INFO  com.Global.BaseClass - Entered the password
+19:59:56.756 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:56.839 [main] INFO  com.Global.BaseClass - The button LOGIN is displayed
+19:59:56.886 [main] DEBUG com.Global.BaseClass - Clicking on the button: LOGIN
+19:59:56.959 [main] INFO  com.Global.BaseClass - Clicked on login button
+19:59:57.810 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:57.887 [main] INFO  com.Global.BaseClass - The button LOGIN is displayed
+19:59:57.929 [main] DEBUG com.Global.BaseClass - Clicking on the button: LOGIN
+19:59:58.095 [main] INFO  com.Global.BaseClass - Validating that the element is displayed
+19:59:58.775 [main] DEBUG com.Global.BaseClass - Hovering on the element: 
+19:59:58.910 [main] INFO  com.Global.BaseClass - Verifying the given click element is displayed or not
+19:59:58.995 [main] INFO  com.Global.BaseClass - The button Domain Values is displayed
+19:59:59.040 [main] DEBUG com.Global.BaseClass - Clicking on the button: Domain Values
