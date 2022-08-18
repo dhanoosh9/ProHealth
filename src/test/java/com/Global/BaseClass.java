@@ -4,8 +4,8 @@ import java.time.Duration;
 import java.util.List;
 
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
@@ -28,6 +28,8 @@ import org.testng.annotations.Parameters;
 
 import com.Elements.DomainValuesElements;
 import com.Utilities.ReadConfig;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -52,7 +54,12 @@ public class BaseClass {
 	public static By admin_btn = By.xpath("//div[@title='User Info']");
 	public static By logout_btn = By.xpath("//a[contains(.,'Logout')]");
 
-	private static Logger log = LogManager.getLogger(BaseClass.class);
+//	private static Logger log = LogManager.getLogger(BaseClass.class);
+
+	public static ExtentReports extent = new ExtentReports();
+	public static ExtentTest test;
+
+//	public static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 
 	@Parameters({ "browser" })
 	@BeforeClass
@@ -67,37 +74,38 @@ public class BaseClass {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}
-		log.info("Maximizing the window");
+//		test.info("Maximizing the window");
 		driver.manage().window().maximize();
-		log.info("Selected browser is: " + browserName);
-		log.info("Navigating to the URL");
+//		test.info("Selected browser is: " + browserName);
+//		test.info("Navigating to the URL");
 		driver.navigate().to(baseURL);
 		driver.manage().deleteAllCookies();
 	}
 
 	@AfterClass
 	public void teardown() {
-//		click(admin_btn);
-//		click(logout_btn);
-		driver.close();
+		click(admin_btn);
+		click(logout_btn);
+		test.info("Logged out successfully");
+
 		driver.quit();
 	}
 
 	// Method for login
 	public void login() {
 		sendKeys(practice, Practice);
-		log.info("Entered practice type");
+		test.info("Entered practice type");
 
 		sendKeys(username, Username);
-		log.info("Entered the username");
+		test.info("Entered the username");
 
 		sendKeys(password, Password);
-		log.info("Entered the password");
+		test.info("Entered the password");
 
 		click(login_button);
-		log.info("Clicked on login button");
+		test.info("Clicked on login button");
 	}
-	
+
 //	public void logins(String Practice, String Username, String Password) {
 //		driver.findElement(practice).sendKeys(Practice);
 //		driver.findElement(username).sendKeys(Username);
@@ -114,30 +122,30 @@ public class BaseClass {
 	// Creates a random string
 	public static String randomstring() {
 		String generatedstring = RandomStringUtils.randomAlphabetic(8);
-		log.debug("Random string is generated: " + generatedstring);
+		test.info("Random string is generated: " + generatedstring);
 		return generatedstring;
 	}
 
 	// Creates a random number
 	public static String randomNum() {
 		String generatedstring2 = RandomStringUtils.randomNumeric(10);
-		log.debug("Random number is generated: " + generatedstring2);
+		test.info("Random number is generated: " + generatedstring2);
 		return generatedstring2;
 	}
 
 	// Click method with by element
 	public static void click(By element) {
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
-		log.info("Verifying the given click element is displayed or not");
+		test.info("Verifying the given click element is displayed or not");
 		if (waitE.until(ExpectedConditions.visibilityOfElementLocated((element))).isDisplayed()) {
-			log.info("The button " + waitE.until(ExpectedConditions.visibilityOfElementLocated((element))).getText()
+			test.info("The button " + waitE.until(ExpectedConditions.visibilityOfElementLocated((element))).getText()
 					+ " is displayed");
-			log.debug("Clicking on the button: "
+			test.info("Clicking on the button: "
 					+ waitE.until(ExpectedConditions.elementToBeClickable(element)).getText());
 			waitE.until(ExpectedConditions.elementToBeClickable(element)).click();
 
 		} else {
-			log.error("The element is not displayed");
+			test.fail("The element is not displayed");
 			Assert.assertTrue(false);
 		}
 	}
@@ -145,13 +153,13 @@ public class BaseClass {
 	// Send keys method with by element
 	public static void sendKeys(By element, String text) {
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
-		log.info("Verifying the given sendkeys element is displayed or not");
+		test.info("Verifying the given sendkeys element is displayed or not");
 		if (waitE.until(ExpectedConditions.visibilityOfElementLocated((element))).isDisplayed()) {
-			log.info("The sendkeys element is displayed");
+			test.info("The sendkeys element is displayed");
 			waitE.until(ExpectedConditions.elementToBeClickable(element)).sendKeys(text);
-			log.info("Entered " + text + " in the box");
+			test.info("Entered " + text + " in the box");
 		} else {
-			log.error("The given sendkeys element is not displayed");
+			test.fail("The given sendkeys element is not displayed");
 			Assert.assertTrue(false);
 		}
 	}
@@ -159,8 +167,7 @@ public class BaseClass {
 	// select by index with iteration
 	public static void selectIndex(By element, int index, String[] expected) {
 //			waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
-				.pollingEvery(Duration.ofSeconds(3))
+		wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10)).pollingEvery(Duration.ofSeconds(3))
 				.ignoring(NoSuchElementException.class, StaleElementReferenceException.class);
 		if (wait.until(ExpectedConditions.presenceOfElementLocated(element)).isDisplayed()) {
 			Select select = new Select(wait.until(ExpectedConditions.presenceOfElementLocated(element)));
@@ -169,19 +176,19 @@ public class BaseClass {
 				boolean value = false;
 				for (int i = 0; i < expected.length; i++) {
 					if (ele.getText().equals(expected[i])) {
-						System.out.println("Actual: " + ele.getText() + " matched " + "Expected: " + expected[i]);
+						test.info("Actual: " + ele.getText() + " matched " + "Expected: " + expected[i]);
 						value = true;
 					}
 				}
 
 				Assert.assertTrue(value);
 			}
-			log.debug("selecting the value: " + index);
+			test.info("selecting the value: " + index);
 			select.selectByIndex(index);
 			boolean value = select.getFirstSelectedOption().isDisplayed();
 			Assert.assertTrue(value);
 		} else {
-			log.error("The given select element is not displayed");
+			test.fail("The given select element is not displayed");
 			Assert.assertTrue(false, "The element is not displayed");
 		}
 
@@ -190,14 +197,14 @@ public class BaseClass {
 	// Hover
 	public static void hover(By element) {
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
-		log.info("Validating that the element is displayed");
+		test.info("Validating that the element is displayed");
 		if (waitE.until(ExpectedConditions.visibilityOfElementLocated(element)).isDisplayed()) {
-			log.debug("Hovering on the element: "
+			test.info("Hovering on the element: "
 					+ waitE.until(ExpectedConditions.visibilityOfElementLocated(element)).getText());
 			Actions action = new Actions(driver);
 			action.moveToElement(waitE.until(ExpectedConditions.presenceOfElementLocated(element))).perform();
 		} else {
-			log.error("The given hover element is not displayed");
+			test.fail("The given hover element is not displayed");
 			Assert.assertTrue(false, "The element is not displayed");
 		}
 	}
@@ -226,23 +233,23 @@ public class BaseClass {
 
 	// Method to check whether the elements are displayed
 	public static void checkElements(int itr, String[] elements) {
-		log.info("Verifying that all elements are displayed");
+		test.info("Verifying that all elements are displayed");
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
 		for (int i = 0; i < itr; i++) {
 			boolean value = waitE.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(elements[i])))
 					.isDisplayed();
 			Assert.assertTrue(value);
 		}
-		log.info("All the elements are displayed");
+		test.info("All the elements are displayed");
 	}
 
 	// Method to check whether the element is displayed
 	public static void Displayed(By element) {
-		log.info("Verifying the element is displayed");
+		test.info("Verifying the element is displayed");
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
 		boolean value = waitE.until(ExpectedConditions.visibilityOfElementLocated(element)).isDisplayed();
 		Assert.assertTrue(value);
-		log.info("The given element is displayed");
+		test.info("The given element is displayed");
 	}
 
 	// Validation method for send keys elements
@@ -262,7 +269,7 @@ public class BaseClass {
 	// Click method with web element element
 	public static void click(WebElement element) {
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
-		log.info("Clicked on the element: " + element.getText());
+		test.info("Clicked on the element: " + element.getText());
 		waitE.until(ExpectedConditions.elementToBeClickable(element)).click();
 	}
 

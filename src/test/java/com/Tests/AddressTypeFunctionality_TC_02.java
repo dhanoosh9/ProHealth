@@ -17,13 +17,16 @@ public class AddressTypeFunctionality_TC_02 extends BaseClass {
 	@Test(dependsOnGroups = { "AddressType" })
 	public void addressTypeTest() {
 //		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+
+		test = extent.createTest("AddressTypeFunctionlaity_TC_02").assignAuthor("DHANOOSH").assignDevice("Dell Laptop");
+//		extentTest.set(test);
 		login();
 
 		selectIndex(LoginElements.facility_dropdown, 1);
 		selectIndex(LoginElements.roles_dropdown, 1);
 
 		click(login_button);
-		
+
 		hover(DomainValuesElements.settings);
 
 		click(DomainValuesElements.domain_values);

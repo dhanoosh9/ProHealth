@@ -1,17 +1,11 @@
 package com.Tests;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.Elements.AddressTypeElements;
 import com.Elements.DomainValuesElements;
 import com.Elements.LoginElements;
 import com.ExpectedData.FrontDashBoardData;
@@ -22,8 +16,12 @@ public class AddressTypeFunctionality_TC_01 extends BaseClass {
 
 	@Test(groups = { "AddressType" })
 	public void dashboardTest() throws InterruptedException {
-		login();
 
+		test = extent.createTest("AddressTypeFunctionality_TC_01").assignAuthor("DHANOOSH").assignDevice("Dell Laptop");
+//		extentTest.set(test);
+
+		login();
+		test.info("Login successfull");
 		boolean login_validation = waitE
 				.until(ExpectedConditions
 						.visibilityOfElementLocated(By.xpath("//h3[contains(.,'Log in to your Account')]")))

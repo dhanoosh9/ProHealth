@@ -2,28 +2,21 @@ package com.Utilities;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+
+import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.Global.BaseClass;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ListenerClass extends BaseClass implements ITestListener {
-	ExtentReports extent = new ExtentReports();
-	ExtentTest test;
-	
-	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 
 	public void onStart(ITestContext context) {
 		System.out.println("Starting...");
@@ -37,24 +30,21 @@ public class ListenerClass extends BaseClass implements ITestListener {
 
 	public void onTestStart(ITestResult result) {
 		System.out.println("Test is starting");
-		test = extent.createTest(result.getMethod().getMethodName());
-		extentTest.set(test);
-		
 	}
 
 	public void onTestSuccess(ITestResult result) {
 		System.out.println("Test success");
-		extentTest.get().pass(result.getName());
+		test.pass(result.getName());
 
 	}
 
 	public void onTestFailure(ITestResult result) {
 		System.out.println("Test failed - capture screenshot");
-		extentTest.get().fail(result.getName());
-		extentTest.get().fail(result.getThrowable());
+		test.fail(result.getName());
+		test.fail(result.getThrowable());
 
 		try {
-			extentTest.get().addScreenCaptureFromPath(capturescreenshot(driver));
+			test.addScreenCaptureFromPath(capturescreenshot());
 
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
@@ -64,7 +54,7 @@ public class ListenerClass extends BaseClass implements ITestListener {
 
 	public void onTestSkipped(ITestResult result) {
 		System.out.println("Test is skipped");
-		extentTest.get().skip(result.getName());
+		test.skip(result.getName());
 	}
 
 //	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
@@ -80,15 +70,14 @@ public class ListenerClass extends BaseClass implements ITestListener {
 		extent.flush();
 	}
 
-	public static String capturescreenshot(WebDriver driver) throws IOException {
-		String timeStamp;
-		timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+	public static String capturescreenshot() throws IOException {
+		Date currentdate = new Date();
+		String time = currentdate.toString().replace(" ", "-").replace(":", "-");
 		File srcfile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		File destinationfilepath = new File(".//ReportScreenShots//" + timeStamp + ".png");
-		String absolutepathlocation = destinationfilepath.getAbsolutePath();
-
+		File destinationfilepath = new File(".//ReportScreenShots//" + time + ".png");
+		String absolutepath = destinationfilepath.getAbsolutePath();
 		FileUtils.copyFile(srcfile, destinationfilepath);
-		return absolutepathlocation;
+		return absolutepath;
 	}
 
 }
