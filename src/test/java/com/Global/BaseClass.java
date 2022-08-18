@@ -59,7 +59,7 @@ public class BaseClass {
 	public static ExtentReports extent = new ExtentReports();
 	public static ExtentTest test;
 
-//	public static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
+	public static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 
 	@Parameters({ "browser" })
 	@BeforeClass
@@ -86,7 +86,7 @@ public class BaseClass {
 	public void teardown() {
 		click(admin_btn);
 		click(logout_btn);
-		test.info("Logged out successfully");
+		extentTest.get().info("Logged out successfully");
 
 		driver.quit();
 	}
@@ -94,16 +94,16 @@ public class BaseClass {
 	// Method for login
 	public void login() {
 		sendKeys(practice, Practice);
-		test.info("Entered practice type");
+		extentTest.get().info("Entered practice type");
 
 		sendKeys(username, Username);
-		test.info("Entered the username");
+		extentTest.get().info("Entered the username");
 
 		sendKeys(password, Password);
-		test.info("Entered the password");
+		extentTest.get().info("Entered the password");
 
 		click(login_button);
-		test.info("Clicked on login button");
+		extentTest.get().info("Clicked on login button");
 	}
 
 //	public void logins(String Practice, String Username, String Password) {
@@ -122,30 +122,30 @@ public class BaseClass {
 	// Creates a random string
 	public static String randomstring() {
 		String generatedstring = RandomStringUtils.randomAlphabetic(8);
-		test.info("Random string is generated: " + generatedstring);
+		extentTest.get().info("Random string is generated: " + generatedstring);
 		return generatedstring;
 	}
 
 	// Creates a random number
 	public static String randomNum() {
 		String generatedstring2 = RandomStringUtils.randomNumeric(10);
-		test.info("Random number is generated: " + generatedstring2);
+		extentTest.get().info("Random number is generated: " + generatedstring2);
 		return generatedstring2;
 	}
 
 	// Click method with by element
 	public static void click(By element) {
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
-		test.info("Verifying the given click element is displayed or not");
+		extentTest.get().info("Verifying the given click element is displayed or not");
 		if (waitE.until(ExpectedConditions.visibilityOfElementLocated((element))).isDisplayed()) {
-			test.info("The button " + waitE.until(ExpectedConditions.visibilityOfElementLocated((element))).getText()
+			extentTest.get().info("The button " + waitE.until(ExpectedConditions.visibilityOfElementLocated((element))).getText()
 					+ " is displayed");
-			test.info("Clicking on the button: "
+			extentTest.get().info("Clicking on the button: "
 					+ waitE.until(ExpectedConditions.elementToBeClickable(element)).getText());
 			waitE.until(ExpectedConditions.elementToBeClickable(element)).click();
 
 		} else {
-			test.fail("The element is not displayed");
+			extentTest.get().fail("The element is not displayed");
 			Assert.assertTrue(false);
 		}
 	}
@@ -153,13 +153,13 @@ public class BaseClass {
 	// Send keys method with by element
 	public static void sendKeys(By element, String text) {
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
-		test.info("Verifying the given sendkeys element is displayed or not");
+		extentTest.get().info("Verifying the given sendkeys element is displayed or not");
 		if (waitE.until(ExpectedConditions.visibilityOfElementLocated((element))).isDisplayed()) {
-			test.info("The sendkeys element is displayed");
+			extentTest.get().info("The sendkeys element is displayed");
 			waitE.until(ExpectedConditions.elementToBeClickable(element)).sendKeys(text);
-			test.info("Entered " + text + " in the box");
+			extentTest.get().info("Entered " + text + " in the box");
 		} else {
-			test.fail("The given sendkeys element is not displayed");
+			extentTest.get().fail("The given sendkeys element is not displayed");
 			Assert.assertTrue(false);
 		}
 	}
@@ -176,19 +176,19 @@ public class BaseClass {
 				boolean value = false;
 				for (int i = 0; i < expected.length; i++) {
 					if (ele.getText().equals(expected[i])) {
-						test.info("Actual: " + ele.getText() + " matched " + "Expected: " + expected[i]);
+						extentTest.get().info("Actual: " + ele.getText() + " matched " + "Expected: " + expected[i]);
 						value = true;
 					}
 				}
 
 				Assert.assertTrue(value);
 			}
-			test.info("selecting the value: " + index);
+			extentTest.get().info("selecting the value: " + index);
 			select.selectByIndex(index);
 			boolean value = select.getFirstSelectedOption().isDisplayed();
 			Assert.assertTrue(value);
 		} else {
-			test.fail("The given select element is not displayed");
+			extentTest.get().fail("The given select element is not displayed");
 			Assert.assertTrue(false, "The element is not displayed");
 		}
 
@@ -197,14 +197,14 @@ public class BaseClass {
 	// Hover
 	public static void hover(By element) {
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
-		test.info("Validating that the element is displayed");
+		extentTest.get().info("Validating that the element is displayed");
 		if (waitE.until(ExpectedConditions.visibilityOfElementLocated(element)).isDisplayed()) {
-			test.info("Hovering on the element: "
+			extentTest.get().info("Hovering on the element: "
 					+ waitE.until(ExpectedConditions.visibilityOfElementLocated(element)).getText());
 			Actions action = new Actions(driver);
 			action.moveToElement(waitE.until(ExpectedConditions.presenceOfElementLocated(element))).perform();
 		} else {
-			test.fail("The given hover element is not displayed");
+			extentTest.get().fail("The given hover element is not displayed");
 			Assert.assertTrue(false, "The element is not displayed");
 		}
 	}
@@ -233,23 +233,23 @@ public class BaseClass {
 
 	// Method to check whether the elements are displayed
 	public static void checkElements(int itr, String[] elements) {
-		test.info("Verifying that all elements are displayed");
+		extentTest.get().info("Verifying that all elements are displayed");
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
 		for (int i = 0; i < itr; i++) {
 			boolean value = waitE.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(elements[i])))
 					.isDisplayed();
 			Assert.assertTrue(value);
 		}
-		test.info("All the elements are displayed");
+		extentTest.get().info("All the elements are displayed");
 	}
 
 	// Method to check whether the element is displayed
 	public static void Displayed(By element) {
-		test.info("Verifying the element is displayed");
+		extentTest.get().info("Verifying the element is displayed");
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
 		boolean value = waitE.until(ExpectedConditions.visibilityOfElementLocated(element)).isDisplayed();
 		Assert.assertTrue(value);
-		test.info("The given element is displayed");
+		extentTest.get().info("The given element is displayed");
 	}
 
 	// Validation method for send keys elements
@@ -269,7 +269,7 @@ public class BaseClass {
 	// Click method with web element element
 	public static void click(WebElement element) {
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
-		test.info("Clicked on the element: " + element.getText());
+		extentTest.get().info("Clicked on the element: " + element.getText());
 		waitE.until(ExpectedConditions.elementToBeClickable(element)).click();
 	}
 

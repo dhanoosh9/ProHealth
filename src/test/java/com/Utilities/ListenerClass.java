@@ -34,14 +34,14 @@ public class ListenerClass extends BaseClass implements ITestListener {
 
 	public void onTestSuccess(ITestResult result) {
 		System.out.println("Test success");
-		test.pass(result.getName());
+		extentTest.get().pass(result.getName());
 
 	}
 
 	public void onTestFailure(ITestResult result) {
 		System.out.println("Test failed - capture screenshot");
-		test.fail(result.getName());
-		test.fail(result.getThrowable());
+		extentTest.get().fail(result.getName());
+		extentTest.get().fail(result.getThrowable());
 
 		try {
 			test.addScreenCaptureFromPath(capturescreenshot());
@@ -54,7 +54,7 @@ public class ListenerClass extends BaseClass implements ITestListener {
 
 	public void onTestSkipped(ITestResult result) {
 		System.out.println("Test is skipped");
-		test.skip(result.getName());
+		extentTest.get().skip(result.getName());
 	}
 
 //	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {

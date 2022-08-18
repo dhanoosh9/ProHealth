@@ -19,7 +19,7 @@ public class AddressTypeFunctionality_TC_02 extends BaseClass {
 //		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 
 		test = extent.createTest("AddressTypeFunctionlaity_TC_02").assignAuthor("DHANOOSH").assignDevice("Dell Laptop");
-//		extentTest.set(test);
+		extentTest.set(test);
 		login();
 
 		selectIndex(LoginElements.facility_dropdown, 1);

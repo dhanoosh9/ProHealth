@@ -18,10 +18,10 @@ public class AddressTypeFunctionality_TC_01 extends BaseClass {
 	public void dashboardTest() throws InterruptedException {
 
 		test = extent.createTest("AddressTypeFunctionality_TC_01").assignAuthor("DHANOOSH").assignDevice("Dell Laptop");
-//		extentTest.set(test);
+		extentTest.set(test);
 
 		login();
-		test.info("Login successfull");
+		extentTest.get().info("Login successfull");
 		boolean login_validation = waitE
 				.until(ExpectedConditions
 						.visibilityOfElementLocated(By.xpath("//h3[contains(.,'Log in to your Account')]")))
