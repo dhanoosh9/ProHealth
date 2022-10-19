@@ -45,7 +45,7 @@ public class Example extends BaseClass {
 
 	@Test
 	public void test() {
-
+		
 		login();
 		log.info("Login Successfull");
 		selectIndex(LoginElements.facility_dropdown, 1);

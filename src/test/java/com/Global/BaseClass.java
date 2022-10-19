@@ -41,7 +41,8 @@ public class BaseClass {
 	public static JavascriptExecutor js;
 
 	ReadConfig readconfig = new ReadConfig();
-	public String browser = readconfig.getbrowserName();
+	public String browser = System.getProperty("browser") != null ? System.getProperty("browser")
+			: readconfig.getbrowserName();
 	public String baseURL = readconfig.getApplicationURL();
 	public String Practice = readconfig.getPractice();
 	public String Username = readconfig.getUsername();
@@ -61,16 +62,16 @@ public class BaseClass {
 
 	public static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 
-	@Parameters({ "browser" })
+//	@Parameters({ "browser" })
 	@BeforeClass
-	public void setup(String browserName) throws InterruptedException {
-		if (browserName.equalsIgnoreCase("chrome")) {
+	public void setup() throws InterruptedException {
+		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
-		} else if (browserName.equalsIgnoreCase("firefox")) {
+		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
-		} else if (browserName.equalsIgnoreCase("edge")) {
+		} else if (browser.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}
@@ -138,8 +139,10 @@ public class BaseClass {
 		waitE = new WebDriverWait(driver, Duration.ofSeconds(10));
 		extentTest.get().info("Verifying the given click element is displayed or not");
 		if (waitE.until(ExpectedConditions.visibilityOfElementLocated((element))).isDisplayed()) {
-			extentTest.get().info("The button " + waitE.until(ExpectedConditions.visibilityOfElementLocated((element))).getText()
-					+ " is displayed");
+			extentTest.get()
+					.info("The button "
+							+ waitE.until(ExpectedConditions.visibilityOfElementLocated((element))).getText()
+							+ " is displayed");
 			extentTest.get().info("Clicking on the button: "
 					+ waitE.until(ExpectedConditions.elementToBeClickable(element)).getText());
 			waitE.until(ExpectedConditions.elementToBeClickable(element)).click();
